@@ -9,14 +9,15 @@ namespace Infrastructure
     {
         public event Action OnShowLoadingCurtainEvent;
         public event Action OnHideLoadingCurtainEvent;
-    
-        public Image Image;
-        public float MoveUpSpeed = 20f;
-        public float TimeStep = 0.03f;
+
+        [SerializeField] private Image _image;
+        
+        private float _moveUpSpeed = 15f;
+        private float _timeStep = 0.01f;
 
         private Coroutine _upCoroutine;
 
-        private const float Delay = 0.5f;
+        private const float Delay = 1f;
 
         private void Awake()
         {
@@ -26,13 +27,16 @@ namespace Infrastructure
         public void Show()
         {
             EnsureCoroutineStopped();
-            Image.rectTransform.anchoredPosition = Vector2.zero;
+
+            _image.rectTransform.anchoredPosition = Vector2.zero;
+
             gameObject.SetActive(true);
         }
 
         public void Hide()
         {
             EnsureCoroutineStopped();
+
             _upCoroutine = StartCoroutine(GoUp());
         }
 
@@ -40,24 +44,25 @@ namespace Infrastructure
         {
             yield return new WaitForSeconds(Delay);
             
-            while (Image.rectTransform.anchoredPosition.y < Image.rectTransform.rect.height)
+            while (_image.rectTransform.anchoredPosition.y < _image.rectTransform.rect.height)
             {
                 MoveImageUp();
-                yield return new WaitForSeconds(TimeStep);
+                yield return new WaitForSeconds(_timeStep);
             }
 
             OnHideLoadingCurtainEvent?.Invoke();
 
             _upCoroutine = null;
+
             gameObject.SetActive(false);
         }
 
         private void MoveImageUp()
         {
-            RectTransform imageTransform = Image.rectTransform;
+            RectTransform imageTransform = _image.rectTransform;
             Vector2 anchoredPosition = imageTransform.anchoredPosition;
 
-            anchoredPosition = new Vector2(anchoredPosition.x, anchoredPosition.y + MoveUpSpeed);
+            anchoredPosition = new Vector2(anchoredPosition.x, anchoredPosition.y + _moveUpSpeed);
 
             imageTransform.anchoredPosition = anchoredPosition;
 
