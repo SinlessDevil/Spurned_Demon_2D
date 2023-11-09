@@ -1,6 +1,8 @@
-using System;
+﻿using System;
+using Infrastructure.StateMachine.Game.States;
+using Zenject;
 
-namespace Scripts.Infrastructure.StateMachine
+namespace Infrastructure.StateMachine
 {
     public interface IStateMachine<TBaseState>
     {

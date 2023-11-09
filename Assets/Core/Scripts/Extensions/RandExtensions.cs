@@ -8,7 +8,13 @@ namespace Extensions
         {
             var rand = Random.Range(0, 11);
             var isChance = rand < percent;
-            Debug.Log("Value: " + rand + " Percent: " + percent + " = " + isChance);
+            return isChance;
+        }
+
+        public static bool Chance(int percent)
+        {
+            var rand = Random.Range(0, 11);
+            var isChance = rand < percent;
             return isChance;
         }
     }

@@ -10,6 +10,17 @@ namespace Extensions
             return Mathf.Round(value * multiplier) / multiplier;
         }
 
+        public static int RoundToNearestInt(this float number)
+        {
+            float decimalPart = number - Mathf.Floor(number);
+            return (decimalPart >= 0.5f) ? Mathf.CeilToInt(number) : Mathf.FloorToInt(number);
+        }
+
+        public static bool IsNumberPositive(this int number)
+        {
+            return number > 0;
+        }
+
         public static float DistanceBetweenPoints(Vector3 a, Vector3 b)
         {
             return Vector3.Distance(a, b);

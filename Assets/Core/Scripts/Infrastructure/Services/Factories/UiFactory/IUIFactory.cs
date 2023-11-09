@@ -1,7 +1,11 @@
-namespace Scripts.Infrastructure.Services.Factories.UIFactory
+﻿using UnityEngine;
+using Window;
+
+namespace Services.Factories.UIFactory
 {
-    public interface IUIFactory
-    {
-        void CreateUiRoot();
-    }
+  public interface IUIFactory
+  {
+    void CreateUiRoot();
+    RectTransform CrateWindow(WindowTypeId windowTypeId);
+  }
 }

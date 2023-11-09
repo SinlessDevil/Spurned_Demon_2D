@@ -1,16 +1,17 @@
+﻿using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
-namespace Scripts.Infrastructure
+namespace Infrastructure
 {
     public class GameRunner : MonoBehaviour
     {
-        [SerializeField] private SceneContext _emptySceneContext;
+        [SerializeField, NotNull] private SceneContext _defaultSceneContext;
 
         private void Awake()
         {
-            if (!FindObjectOfType<SceneContext>())
-                Instantiate(_emptySceneContext);
+            if (!FindObjectOfType<ProjectContext>())
+                Instantiate(_defaultSceneContext);
 
             Destroy(gameObject);
         }

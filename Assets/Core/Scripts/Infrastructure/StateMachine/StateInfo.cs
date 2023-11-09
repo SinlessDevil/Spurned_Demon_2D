@@ -1,6 +1,7 @@
 using System;
+using Infrastructure.StateMachine.Game.States;
 
-namespace Scripts.Infrastructure.StateMachine
+namespace Infrastructure.StateMachine
 {
     public class StateInfo<TState, TBaseState> : IStateInfo where TState : class, IState, TBaseState
     {

@@ -1,12 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Scripts.Infrastructure
+namespace Infrastructure
 {
-    public class CoroutineRunner : MonoBehaviour, ICoroutineRunner
+  public class CoroutineRunner : MonoBehaviour, ICoroutineRunner
+  {
+    public void Awake()
     {
-        public void Awake()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+      DontDestroyOnLoad(gameObject);
     }
+  }
 }

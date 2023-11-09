@@ -1,8 +1,8 @@
-using Scripts.Infrastructure.Services.Factories.GameFactory;
-using Scripts.Infrastructure.StateMachine.Game;
+using Infrastructure.StateMachine.Game.States;
+using UnityEngine;
 using Zenject;
 
-namespace Scripts.Infrastructure.StateMachine.Game
+namespace Infrastructure.StateMachine.Game
 {
     public class GameStateMachine : StateMachine<IGameState>, ITickable
     {

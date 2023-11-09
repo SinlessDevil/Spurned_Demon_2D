@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 
-namespace Scripts.Infrastructure
+namespace Infrastructure
 {
     public interface ISceneLoader
     {

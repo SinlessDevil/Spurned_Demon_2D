@@ -1,8 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace Scripts.Infrastructure.Services.Factories
+namespace Services.Factories
 {
     public abstract class Factory
     {
@@ -13,32 +13,41 @@ namespace Scripts.Infrastructure.Services.Factories
             _instantiator = instantiator;
         }
 
-        protected GameObject InstantiateOnActiveScene(string uiRootPath)
+        protected T Instantiate<T>() =>
+            _instantiator.Instantiate<T>();
+
+        protected GameObject Instantiate(string resourcePath)
         {
-            GameObject gameObject = _instantiator.InstantiatePrefabResource(uiRootPath);
+            GameObject gameObject = _instantiator.InstantiatePrefabResource(resourcePath);
             return MoveToCurrentScene(gameObject);
         }
 
-        protected GameObject InstantiateOnActiveScene(string uiRootPath, Transform parent)
+        protected GameObject Instantiate(string resourcePath, Transform parent)
         {
-            GameObject gameObject = _instantiator.InstantiatePrefabResource(uiRootPath, parent);
+            GameObject gameObject = _instantiator.InstantiatePrefabResource(resourcePath, parent);
             return MoveToCurrentScene(gameObject);
         }
 
-        protected GameObject InstantiateOnActiveScene(string uiRootPath, Vector3 position, Quaternion rotation, Transform parent)
+        protected GameObject Instantiate(string resourcePath, Vector3 position, Quaternion rotation, Transform parent)
         {
-            GameObject gameObject = _instantiator.InstantiatePrefabResource(uiRootPath, position, rotation, parent);
+            GameObject gameObject = _instantiator.InstantiatePrefabResource(resourcePath, position, rotation, parent);
             return MoveToCurrentScene(gameObject);
         }
 
-        protected GameObject InstantiatePrefabOnActiveScene(GameObject prefab)
+        protected GameObject Instantiate(GameObject prefab)
         {
             GameObject gameObject = _instantiator.InstantiatePrefab(prefab);
             return MoveToCurrentScene(gameObject);
         }
 
-        protected GameObject InstantiatePrefab(GameObject prefab, Transform parent) =>
+        protected GameObject Instantiate(GameObject prefab, Transform parent) => 
             _instantiator.InstantiatePrefab(prefab, parent);
+
+        protected GameObject Instantiate(GameObject prefab, Vector3 position, Quaternion rotation, Transform parent)
+        {
+            GameObject gameObject = _instantiator.InstantiatePrefab(prefab, position, rotation, parent);
+            return MoveToCurrentScene(gameObject);
+        }
 
         private GameObject MoveToCurrentScene(GameObject gameObject)
         {

@@ -1,6 +1,7 @@
 using System;
+using Infrastructure.StateMachine.Game.States;
 
-namespace Scripts.Infrastructure.StateMachine
+namespace Infrastructure.StateMachine
 {
     public class PayloadedStateInfo<TState, TBaseState, TPayload> : IStateInfo where TState : class, IPayloadedState<TPayload>, TBaseState
     {
@@ -18,17 +19,17 @@ namespace Scripts.Infrastructure.StateMachine
         }
 
         public Type StateType { get; }
-
-        public void Enter() =>
+        
+        public void Enter() => 
             _stateMachine.Enter<TState, TPayload>(_payload);
 
         public void Update()
         {
-            if (_state is IUpdatable updatableState)
+            if(_state is IUpdatable updatableState)
                 updatableState.Update();
         }
 
-        public void Exit() =>
+        public void Exit() => 
             _state.Exit();
     }
 }

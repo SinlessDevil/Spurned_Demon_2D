@@ -1,24 +1,36 @@
+﻿using Services.StaticData;
+using StaticData;
 using UnityEngine;
+using Window;
 using Zenject;
 
-namespace Scripts.Infrastructure.Services.Factories.UIFactory
+namespace Services.Factories.UIFactory
 {
-    public class UIFactory : Factory, IUIFactory
+  public class UIFactory : Factory, IUIFactory
+  {
+    private const string UiRootPath = "UI/UiRoot";
+
+    private readonly IInstantiator _instantiator;
+    private readonly IStaticDataService _staticData;
+    
+    private Transform _uiRoot;
+
+    public UIFactory(IInstantiator instantiator, IStaticDataService staticDataService) : base(instantiator)
     {
-        private const string UiRootPath = "UI/UiRoot";
-
-        private readonly IInstantiator _instantiator;
-
-        private Transform _uiRoot;
-
-        public UIFactory(IInstantiator instantiator) : base(instantiator)
-        {
-            _instantiator = instantiator;
-        }
-
-        public void CreateUiRoot()
-        {
-            _uiRoot = InstantiateOnActiveScene(UiRootPath).transform;
-        }
+      _instantiator = instantiator;
+      _staticData = staticDataService;
     }
+    
+    public void CreateUiRoot()
+    {
+      _uiRoot = Instantiate(UiRootPath).transform;
+    }
+
+    public RectTransform CrateWindow(WindowTypeId windowTypeId)
+    {
+      WindowConfig config = _staticData.ForWindow(windowTypeId);
+      GameObject window = Instantiate(config.Prefab, _uiRoot);
+      return window.GetComponent<RectTransform>();
+    }
+  }
 }

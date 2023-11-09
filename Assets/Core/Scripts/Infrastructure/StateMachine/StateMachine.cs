@@ -1,7 +1,8 @@
-using System;
-using Scripts.Infrastructure.Services.Factories;
+﻿using System;
+using Infrastructure.StateMachine.Game.States;
+using UnityEngine;
 
-namespace Scripts.Infrastructure.StateMachine
+namespace Infrastructure.StateMachine
 {
     public abstract class StateMachine<TBaseState> : IUpdatable, IDisposable, IStateMachine<TBaseState>
     {

@@ -1,6 +1,7 @@
+
 using System;
 
-namespace Scripts.Infrastructure.StateMachine
+namespace Infrastructure.StateMachine
 {
     public interface IStateInfo
     {

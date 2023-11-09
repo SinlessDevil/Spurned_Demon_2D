@@ -1,0 +1,41 @@
+{
+    "name": "Tests.PlayMode",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "FluentAssertions.dll",
+        "NSubstitute.dll",
+        "Castle.Core.dll",
+        "Newtonsoft.Json.dll",
+        "System.Collections.Specialized.dll",
+        "System.ComponentModel.TypeConverter.dll",
+        "System.Reflection.TypeExtensions.dll",
+        "System.Runtime.CompilerServices.Unsafe.dll",
+        "System.Text.RegularExpressions.dll",
+        "System.Threading.Tasks.Extensions.dll",
+        "System.Xml.ReaderWriter.dll",
+        "System.Xml.XmlDocument.dll",
+        "System.Buffers.dll",
+        "Microsoft.CodeAnalysis.CSharp.dll",
+        "Microsoft.CodeAnalysis.dll",
+        "System.Collections.Immutable.dll",
+        "System.Numerics.Vectors.dll",
+        "System.Reflection.Metadata.dll",
+        "System.Memory.dll",
+        "System.Text.Encoding.CodePages.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
