@@ -1,4 +1,5 @@
-﻿using Services.Factories.Game;
+﻿using AudioService;
+using Services.Factories.Game;
 using Services.Factories.UIFactory;
 using Services.StaticData;
 using Zenject;
@@ -13,10 +14,11 @@ namespace Infrastructure.StateMachine.Game.States
         private readonly IStateMachine<IGameState> _gameStateMachine;
         private readonly IGameFactory _gameFactory;
         private readonly IStaticDataService _staticDataService;
+        private readonly IAudioClipsService _audioClipsService;
 
         [Inject]
         public LoadLevelState(IStateMachine<IGameState> gameStateMachine, ISceneLoader sceneLoader, ILoadingCurtain loadingCurtain, 
-            IUIFactory uiFactory, IGameFactory gameFactory, IStaticDataService staticDataService)
+            IUIFactory uiFactory, IGameFactory gameFactory, IStaticDataService staticDataService, IAudioClipsService audioClipsService)
         {
             _gameFactory = gameFactory;
             _gameStateMachine = gameStateMachine;
@@ -24,6 +26,7 @@ namespace Infrastructure.StateMachine.Game.States
             _loadingCurtain = loadingCurtain;
             _uiFactory = uiFactory;
             _staticDataService = staticDataService;
+            _audioClipsService = audioClipsService;
         }
 
         public void Enter(string payload)
@@ -46,6 +49,8 @@ namespace Infrastructure.StateMachine.Game.States
         private void InitGameWorld()
         {
             InitUIRoot();
+
+            _audioClipsService.PlayClip(TypeSound.Menu);
         }
 
         #region Init UI

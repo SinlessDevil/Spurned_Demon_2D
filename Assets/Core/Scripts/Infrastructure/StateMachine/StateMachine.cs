@@ -1,6 +1,5 @@
 ﻿using System;
 using Infrastructure.StateMachine.Game.States;
-using UnityEngine;
 
 namespace Infrastructure.StateMachine
 {

@@ -6,6 +6,7 @@ namespace Services.StaticData
     public interface IStaticDataService
     {
         GameStaticData GameConfig { get; }
+        AudioStaticData AudioConfig { get; }
         BalanceStaticData Balance { get; }
 
         void LoadData();

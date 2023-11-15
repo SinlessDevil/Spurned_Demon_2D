@@ -1,3 +1,4 @@
+using AudioService;
 using DebuggerOptions;
 using Infrastructure.StateMachine;
 using Infrastructure.StateMachine.Game;
@@ -56,7 +57,8 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<FPSMeter>().AsSingle();
             Container.BindInterfacesTo<RandomService>().AsSingle();
             Container.BindInterfacesTo<GameFactory>().AsSingle();
-            
+            Container.BindInterfacesTo<AudioClipsService>().AsSingle();
+
             BindEnrichedAnalyticService<AnalyticService>();
             BindDeviceDataService(); 
             BindAppInfoService();
@@ -123,6 +125,7 @@ namespace Infrastructure.Installers
             Container.Bind<BootstrapState>().AsSingle();
             Container.Bind<LoadProgressState>().AsSingle();
             Container.Bind<BootstrapAnalyticState>().AsSingle();
+            Container.Bind<BootstrapAudioState>().AsSingle();
             Container.Bind<LoadLevelState>().AsSingle();
             Container.Bind<GameLoopState>().AsSingle();
         }

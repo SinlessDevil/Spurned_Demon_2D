@@ -97,7 +97,7 @@ namespace Infrastructure.StateMachine.Game.States
             if (IsVersionChanged()) 
                 RefreshVersionNotified();
 
-            _stateMachine.Enter<LoadLevelState, string>(payload);
+            _stateMachine.Enter<BootstrapAudioState, string>(payload);
         }
 
         private void RefreshAnalyticsData()
