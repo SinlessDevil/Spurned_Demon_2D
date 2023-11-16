@@ -5,7 +5,7 @@ namespace Infrastructure.Services.LocalizationService
 {
     public class LocalizeMenu : MonoBehaviour
     {
-        private Localize[] _localizes;
+        [SerializeField] private Localize[] _localizes;
 
         private ILocaleService _localeService;
 
@@ -26,9 +26,12 @@ namespace Infrastructure.Services.LocalizationService
 
         private void ChangeLanguage(SystemLanguage systemLanguage)
         {
+            _localeService.CurrentLanguage = systemLanguage.ToString();
+            _localeService.SystemPlayerLanguage = systemLanguage;
+
             foreach (Localize localize in _localizes)
             {
-                localize.SetCurrentLanguage(systemLanguage);
+                localize.UpdateLocale();
             }
         }
     }

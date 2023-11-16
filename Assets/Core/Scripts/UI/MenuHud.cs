@@ -1,11 +1,9 @@
-using Infrastructure.Services.LocalizationService;
 using UnityEngine;
 
 namespace UI
 {
-    public class MenuHud : MonoBehaviour
+    public class MenuHud : Hud
     {
         [field: SerializeField] public GameObject Menu;
-        [field: SerializeField] public LocalizeMenu localizeMenu;
     }
 }

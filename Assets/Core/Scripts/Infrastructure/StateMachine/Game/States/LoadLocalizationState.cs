@@ -1,5 +1,6 @@
 using Infrastructure.Services.LocalizationService;
 using UnityEngine;
+using UI;
 using Zenject;
 
 namespace Infrastructure.StateMachine.Game.States
@@ -18,33 +19,28 @@ namespace Infrastructure.StateMachine.Game.States
 
         public void Enter()
         {
+            var hud = FindHud();
+
             var lozalizes = InitLocalizes();
 
-            InitLocolizeMenu(lozalizes);
+            InitLocolizeMenu(hud, lozalizes);
 
             _gameStateMachine.Enter<GameLoopState>();
         }
+        private Hud FindHud() => Object.FindObjectOfType<Hud>();
 
         private Localize[] InitLocalizes()
         {
-            var lozalizes = Object.FindObjectsOfType<Localize>();
+            var lozalizes = Resources.FindObjectsOfTypeAll<Localize>();
 
             foreach (var lozalize in lozalizes)
             {
-                lozalizes.Initialize();
+                lozalize.Initilize();
             }
 
             return lozalizes;
         }
-        private void InitLocolizeMenu(Localize[] localizes)
-        {
-            var locolizeMenu = Object.FindObjectOfType<LocalizeMenu>();
-
-            if(locolizeMenu != null) 
-            {
-                locolizeMenu.Initialize(localizes);
-            }
-        }
+        private void InitLocolizeMenu(Hud hud,Localize[] localizes) => hud.localizeMenu.Initialize(localizes);
 
         public void Exit()
         {
