@@ -43,14 +43,14 @@ namespace Infrastructure.StateMachine.Game.States
         {
             InitGameWorld();
 
-            _gameStateMachine.Enter<GameLoopState>();
+            _gameStateMachine.Enter<LoadLocalizationState>();
         }
 
         private void InitGameWorld()
         {
             InitUIRoot();
 
-            _audioClipsService.PlayClip(TypeSound.Menu);
+            _audioClipsService.PlayClip(TypeSound.Menu); // Test
         }
 
         #region Init UI

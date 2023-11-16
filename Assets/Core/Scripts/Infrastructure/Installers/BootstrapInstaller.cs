@@ -2,6 +2,7 @@ using DebuggerOptions;
 using Infrastructure.StateMachine;
 using Infrastructure.StateMachine.Game;
 using Infrastructure.StateMachine.Game.States;
+using LocalizationService;
 using Services.Analytics;
 using Services.AppInfo;
 using Services.AppInfo.Abstractions;
@@ -58,6 +59,7 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<RandomService>().AsSingle();
             Container.BindInterfacesTo<GameFactory>().AsSingle();
             Container.BindInterfacesTo<AudioClipsService>().AsSingle();
+            Container.BindInterfacesTo<LocaleService>().AsSingle();
 
             BindEnrichedAnalyticService<AnalyticService>();
             BindDeviceDataService(); 
@@ -127,6 +129,7 @@ namespace Infrastructure.Installers
             Container.Bind<BootstrapAnalyticState>().AsSingle();
             Container.Bind<BootstrapAudioState>().AsSingle();
             Container.Bind<LoadLevelState>().AsSingle();
+            Container.Bind<LoadLocalizationState>().AsSingle();   
             Container.Bind<GameLoopState>().AsSingle();
         }
         private void BootstrapGame() => 

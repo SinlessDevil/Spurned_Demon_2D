@@ -20,7 +20,7 @@ namespace Infrastructure.StateMachine.Game.States
             _staticDataService = staticDataService;
             _audioClipsService = audioClipsService;
         }
-
+    
         public void Enter(string payload)
         {
             var sounds = _staticDataService.AudioConfig.Sounds.ToArray();

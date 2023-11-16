@@ -7,9 +7,7 @@ namespace Infrastructure.StateMachine.Game
 {
     public class GameStateFactory : StateFactory
     {
-        public GameStateFactory(DiContainer container) : base(container)
-        {
-        }
+        public GameStateFactory(DiContainer container) : base(container) {}
 
         protected override Dictionary<Type, Func<IExitable>> BuildStatesRegister(DiContainer container)
         {
@@ -20,6 +18,7 @@ namespace Infrastructure.StateMachine.Game
                 [typeof(BootstrapAnalyticState)] = container.Resolve<BootstrapAnalyticState>,
                 [typeof(BootstrapAudioState)] = container.Resolve<BootstrapAudioState>,
                 [typeof(LoadLevelState)] = container.Resolve<LoadLevelState>,
+                [typeof(LoadLocalizationState)] = container.Resolve<LoadLocalizationState>,
                 [typeof(GameLoopState)] = container.Resolve<GameLoopState>,          
             };
         }
