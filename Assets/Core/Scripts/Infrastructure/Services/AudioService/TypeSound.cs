@@ -1,4 +1,4 @@
-namespace AudioService
+namespace Services.AudioService
 {
     public enum TypeSound
     {

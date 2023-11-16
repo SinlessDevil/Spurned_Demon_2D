@@ -1,4 +1,3 @@
-using AudioService;
 using DebuggerOptions;
 using Infrastructure.StateMachine;
 using Infrastructure.StateMachine.Game;
@@ -6,6 +5,7 @@ using Infrastructure.StateMachine.Game.States;
 using Services.Analytics;
 using Services.AppInfo;
 using Services.AppInfo.Abstractions;
+using Services.AudioService;
 using Services.DeviceData;
 using Services.DeviceData.Abstractions;
 using Services.Factories.Game;

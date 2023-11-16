@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AudioService
+namespace Services.AudioService
 {
     [Serializable]
     public class Sound
