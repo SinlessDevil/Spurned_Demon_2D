@@ -1,4 +1,4 @@
-﻿using Services.StaticData;
+﻿using Infrastructure.Services.StaticData;
 using UnityEngine.SceneManagement;
 
 namespace Infrastructure.StateMachine.Game.States

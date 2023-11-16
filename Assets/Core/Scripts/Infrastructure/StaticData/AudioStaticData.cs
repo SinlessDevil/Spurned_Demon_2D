@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Services.AudioService;
+using Infrastructure.Services.AudioService;
 using UnityEngine;
 
-namespace StaticData
+namespace Infrastructure.StaticData
 {
     [CreateAssetMenu(menuName = "StaticData/Audio", fileName = "AudioConfig", order = 1)]
     public class AudioStaticData : ScriptableObject

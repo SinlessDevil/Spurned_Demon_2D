@@ -1,6 +1,6 @@
 using IdGen;
 
-namespace Services.Random
+namespace Infrastructure.Services.Random
 {
     public class RandomService : IRandomService
     {

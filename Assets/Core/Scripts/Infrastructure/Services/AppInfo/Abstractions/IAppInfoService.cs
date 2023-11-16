@@ -1,4 +1,4 @@
-namespace Services.AppInfo.Abstractions
+namespace Infrastructure.Services.AppInfo.Abstractions
 {
     public interface IAppInfoService
     {

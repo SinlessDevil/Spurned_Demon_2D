@@ -1,4 +1,4 @@
-﻿namespace Services.DeviceData.Abstractions
+﻿namespace Infrastructure.Services.DeviceData.Abstractions
 {
     public interface IDeviceDataService
     {

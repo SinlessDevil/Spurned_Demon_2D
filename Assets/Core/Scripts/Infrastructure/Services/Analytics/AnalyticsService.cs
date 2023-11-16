@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using Services.Analytics.Events;
-using Services.Analytics.Events.Behaviour;
-using Services.DeviceData.Abstractions;
-using Services.PersistenceProgress;
-using Services.PersistenceProgress.Analytic;
+using Infrastructure.Services.Analytics.Events;
+using Infrastructure.Services.Analytics.Events.Behaviour;
+using Infrastructure.Services.DeviceData.Abstractions;
+using Infrastructure.Services.PersistenceProgress;
+using Infrastructure.Services.PersistenceProgress.Analytic;
 using UnityEngine;
 
-namespace Services.Analytics
+namespace Infrastructure.Services.Analytics
 {
     public class AnalyticService : IAnalyticService
     {

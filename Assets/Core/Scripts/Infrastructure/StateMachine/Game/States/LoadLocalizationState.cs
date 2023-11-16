@@ -1,4 +1,4 @@
-using LocalizationService;
+using Infrastructure.Services.LocalizationService;
 using UnityEngine;
 using Zenject;
 

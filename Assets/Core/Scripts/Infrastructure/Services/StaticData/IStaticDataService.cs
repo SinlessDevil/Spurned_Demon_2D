@@ -1,7 +1,7 @@
-using StaticData;
+using Infrastructure.StaticData;
 using Window;
 
-namespace Services.StaticData
+namespace Infrastructure.Services.StaticData
 {
     public interface IStaticDataService
     {

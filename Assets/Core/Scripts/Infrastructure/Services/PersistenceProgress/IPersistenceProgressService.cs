@@ -1,7 +1,7 @@
-using Services.PersistenceProgress.Analytic;
-using Services.PersistenceProgress.Player;
+using Infrastructure.Services.PersistenceProgress.Analytic;
+using Infrastructure.Services.PersistenceProgress.Player;
 
-namespace Services.PersistenceProgress
+namespace Infrastructure.Services.PersistenceProgress
 {
     public interface IPersistenceProgressService
     {

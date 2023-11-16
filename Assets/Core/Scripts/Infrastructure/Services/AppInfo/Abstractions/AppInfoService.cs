@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Services.AppInfo.Abstractions
+namespace Infrastructure.Services.AppInfo.Abstractions
 {
     public abstract class AppInfoService
     {

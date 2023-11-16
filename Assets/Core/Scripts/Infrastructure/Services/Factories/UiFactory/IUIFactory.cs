@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Window;
 
-namespace Services.Factories.UIFactory
+namespace Infrastructure.Services.Factories.UIFactory
 {
   public interface IUIFactory
   {

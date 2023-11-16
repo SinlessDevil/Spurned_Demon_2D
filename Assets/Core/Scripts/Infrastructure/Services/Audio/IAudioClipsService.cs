@@ -1,4 +1,4 @@
-namespace Services.AudioService
+namespace Infrastructure.Services.AudioService
 {
     public interface IAudioClipsService
     {

@@ -1,7 +1,7 @@
-﻿using Services.StaticData;
+﻿using Infrastructure.Services.StaticData;
 using Zenject;
 
-namespace Services.Factories.Game
+namespace Infrastructure.Services.Factories.Game
 {
     public class GameFactory : Factory, IGameFactory
     {

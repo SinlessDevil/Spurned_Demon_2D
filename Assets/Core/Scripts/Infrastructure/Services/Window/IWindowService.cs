@@ -1,6 +1,6 @@
 ﻿using Window;
 
-namespace Services.Window
+namespace Infrastructure.Services.Window
 {
   public interface IWindowService
   {

@@ -2,16 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Services.Analytics;
-using Services.Analytics.Events.Behaviour;
-using Services.AppInfo.Abstractions;
-using Services.PersistenceProgress;
-using Services.PersistenceProgress.Analytic;
-using Services.PersistenceProgress.Player;
-using Services.Random;
+using Infrastructure.Services.Analytics;
+using Infrastructure.Services.Analytics.Events.Behaviour;
+using Infrastructure.Services.AppInfo.Abstractions;
+using Infrastructure.Services.PersistenceProgress;
+using Infrastructure.Services.PersistenceProgress.Analytic;
+using Infrastructure.Services.PersistenceProgress.Player;
+using Infrastructure.Services.Random;
 using UnityEngine;
 using Zenject;
-using Application = Services.PersistenceProgress.Analytic.Application;
+using Application = Infrastructure.Services.PersistenceProgress.Analytic.Application;
 
 namespace Infrastructure.StateMachine.Game.States
 {

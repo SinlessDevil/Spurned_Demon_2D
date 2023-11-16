@@ -1,9 +1,7 @@
 using System;
 
-namespace Services.PersistenceProgress.Player
+namespace Infrastructure.Services.PersistenceProgress.Player
 {
     [Serializable]
-    public class PlayerData
-    {
-    }
+    public class PlayerData { }
 }

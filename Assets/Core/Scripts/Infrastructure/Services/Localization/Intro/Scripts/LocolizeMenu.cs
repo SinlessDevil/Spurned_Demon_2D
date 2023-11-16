@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace LocalizationService
+namespace Infrastructure.Services.LocalizationService
 {
     public class LocolizeMenu : MonoBehaviour
     {

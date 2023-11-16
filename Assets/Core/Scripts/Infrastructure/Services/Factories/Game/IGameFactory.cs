@@ -1,4 +1,4 @@
-namespace Services.Factories.Game
+namespace Infrastructure.Services.Factories.Game
 {
     public interface IGameFactory
     {

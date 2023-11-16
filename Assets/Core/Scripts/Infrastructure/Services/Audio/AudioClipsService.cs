@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Services.AudioService
+namespace Infrastructure.Services.AudioService
 {
     public class AudioClipsService : IAudioClipsService
     {

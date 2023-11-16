@@ -1,6 +1,6 @@
-using Services.Analytics.Events;
+using Infrastructure.Services.Analytics.Events;
 
-namespace Services.Analytics
+namespace Infrastructure.Services.Analytics
 {
     public interface IAnalyticService
     {

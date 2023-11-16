@@ -2,7 +2,7 @@
 using UnityEngine;
 using Window;
 
-namespace StaticData
+namespace Infrastructure.StaticData
 {
   [Serializable]
   public class WindowConfig

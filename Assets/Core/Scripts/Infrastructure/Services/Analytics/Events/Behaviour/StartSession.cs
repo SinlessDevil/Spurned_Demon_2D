@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Services.Analytics.Events.Behaviour
+namespace Infrastructure.Services.Analytics.Events.Behaviour
 {
     public class StartSession : IAnalyticEvent
     {

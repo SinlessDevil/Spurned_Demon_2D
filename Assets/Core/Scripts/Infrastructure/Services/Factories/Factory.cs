@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace Services.Factories
+namespace Infrastructure.Services.Factories
 {
     public abstract class Factory
     {

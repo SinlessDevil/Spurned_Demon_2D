@@ -1,8 +1,8 @@
-﻿using Services.Factories.UIFactory;
+﻿using Infrastructure.Services.Factories.UIFactory;
 using Window;
 using Zenject;
 
-namespace Services.Window
+namespace Infrastructure.Services.Window
 {
     public class WindowService : IWindowService
     {

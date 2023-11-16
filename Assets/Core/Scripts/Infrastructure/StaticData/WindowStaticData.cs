@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace StaticData
+namespace Infrastructure.StaticData
 {
   [CreateAssetMenu(menuName = "StaticData/Windows", fileName = "WindowsStaticData", order = 0)]
   public class WindowStaticData : ScriptableObject

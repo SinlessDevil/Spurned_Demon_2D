@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Services.Analytics.Events.Behaviour
+namespace Infrastructure.Services.Analytics.Events.Behaviour
 {
     public class FirstOpen : IAnalyticEvent
     {

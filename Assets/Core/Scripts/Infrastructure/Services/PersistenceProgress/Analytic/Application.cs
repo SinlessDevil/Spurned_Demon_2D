@@ -1,6 +1,6 @@
 using System;
 
-namespace Services.PersistenceProgress.Analytic
+namespace Infrastructure.Services.PersistenceProgress.Analytic
 {
     [Serializable]
     public class Application

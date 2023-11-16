@@ -1,6 +1,6 @@
-using Services.DeviceData.Abstractions;
+using Infrastructure.Services.DeviceData.Abstractions;
 
-namespace Services.DeviceData
+namespace Infrastructure.Services.DeviceData
 {
     class EditorDeviceDataService : DeviceDataService, IDeviceDataService
     {

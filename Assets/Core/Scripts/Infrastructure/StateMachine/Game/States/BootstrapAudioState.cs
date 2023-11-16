@@ -1,5 +1,5 @@
-using Services.AudioService;
-using Services.StaticData;
+using Infrastructure.Services.AudioService;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
 using Zenject;
 

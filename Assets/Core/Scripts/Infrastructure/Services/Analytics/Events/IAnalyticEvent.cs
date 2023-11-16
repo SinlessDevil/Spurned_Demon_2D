@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Services.Analytics.Events
+namespace Infrastructure.Services.Analytics.Events
 {
     public interface IAnalyticEvent
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
-using Services.StaticData;
-using StaticData;
+using Infrastructure.StaticData;
+using Infrastructure.Services.StaticData;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;

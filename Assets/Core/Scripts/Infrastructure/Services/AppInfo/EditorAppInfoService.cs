@@ -1,6 +1,6 @@
-using Services.AppInfo.Abstractions;
+using Infrastructure.Services.AppInfo.Abstractions;
 
-namespace Services.AppInfo
+namespace Infrastructure.Services.AppInfo
 {
     class EditorAppInfoService : AppInfoService, IAppInfoService
     {

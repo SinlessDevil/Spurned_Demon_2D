@@ -3,7 +3,7 @@ using UnityEngine;
 using Extensions;
 using TMPro;
 
-namespace LocalizationService
+namespace Infrastructure.Services.LocalizationService
 {
     [RequireComponent(typeof(TMP_Text))]
     public class Localize : LocalizBase

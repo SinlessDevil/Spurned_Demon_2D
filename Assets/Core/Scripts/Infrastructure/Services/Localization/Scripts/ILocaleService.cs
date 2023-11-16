@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LocalizationService
+namespace Infrastructure.Services.LocalizationService
 {
     public interface ILocaleService
     {

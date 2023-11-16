@@ -1,10 +1,10 @@
-﻿using Services.StaticData;
-using StaticData;
+﻿using Infrastructure.Services.StaticData;
+using Infrastructure.StaticData;
 using UnityEngine;
 using Window;
 using Zenject;
 
-namespace Services.Factories.UIFactory
+namespace Infrastructure.Services.Factories.UIFactory
 {
   public class UIFactory : Factory, IUIFactory
   {
