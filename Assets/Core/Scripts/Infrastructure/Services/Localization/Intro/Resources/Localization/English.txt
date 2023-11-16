@@ -1,11 +1,3 @@
 playy	Play
 exitt	Exit
-soonn	Soon
-exittomenu	Exit to Menu
-restart	Restart
-gameover	GameOver
-youwin	You Win!
-recordd	Record
-levelss	Levels
-notmorelevels	You have reached the last level
-startover	Start Over
+settingss	Settings

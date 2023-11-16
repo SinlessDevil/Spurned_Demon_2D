@@ -28,7 +28,6 @@ namespace Infrastructure.Services.LocalizationService
             if (String.IsNullOrEmpty(_localizationKey) == false && _localeService.CurrentLanguageStrings.ContainsKey(_localizationKey))
                 _text.text = _localeService.CurrentLanguageStrings[_localizationKey].Replace(@"\n", "" + '\n'); ;
 
-            Debug.Log(_text.text);
         }
     }
 }

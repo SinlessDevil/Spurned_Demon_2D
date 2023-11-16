@@ -19,6 +19,8 @@ namespace Infrastructure.StateMachine.Game.States
 
         public void Enter()
         {
+            InitSaveLanguage();
+
             var hud = FindHud();
 
             var lozalizes = InitLocalizes();
@@ -27,11 +29,21 @@ namespace Infrastructure.StateMachine.Game.States
 
             _gameStateMachine.Enter<GameLoopState>();
         }
-        private Hud FindHud() => Object.FindObjectOfType<Hud>();
 
+        private void InitSaveLanguage()
+        {
+            if (_localeService.CurrentLanguageHasBeenSet == false)
+            {
+                _localeService.CurrentLanguageHasBeenSet = true;
+
+                _localeService.CurrentLanguage = _localeService.SystemPlayerLanguage.ToString();
+                _localeService.SystemPlayerLanguage = _localeService.SystemPlayerLanguage;
+            }
+        }
+        private Hud FindHud() => Object.FindObjectOfType<Hud>();
         private Localize[] InitLocalizes()
         {
-            var lozalizes = Resources.FindObjectsOfTypeAll<Localize>();
+            var lozalizes = Object.FindObjectsOfType<Localize>();
 
             foreach (var lozalize in lozalizes)
             {
