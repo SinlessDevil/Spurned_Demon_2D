@@ -1,4 +1,4 @@
-namespace Infrastructure.StateMachine.Game.States
+namespace Infrastructure.StateMachine.Game
 {
     public interface IUpdatable
     {

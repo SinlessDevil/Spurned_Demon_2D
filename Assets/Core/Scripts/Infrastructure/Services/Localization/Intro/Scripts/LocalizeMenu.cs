@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Infrastructure.Services.LocalizationService
 {
-    public class LocolizeMenu : MonoBehaviour
+    public class LocalizeMenu : MonoBehaviour
     {
         private Localize[] _localizes;
 

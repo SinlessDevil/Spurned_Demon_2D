@@ -35,7 +35,6 @@ namespace Infrastructure.Services.LocalizationService
             else
                 return string.Empty;
         }
-
         public void SetCurrentLanguage(SystemLanguage language)
         {
             _localeService.CurrentLanguage = language.ToString();

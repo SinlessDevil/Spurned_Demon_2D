@@ -21,7 +21,7 @@ namespace Infrastructure.Services.AudioService
             Sound s = Array.Find(Sounds, sound => sound.typeSound == typeSound);
             if (s is null)
             {
-                Debug.LogWarning("Sound:" + typeSound + "not found!");
+                Debug.LogWarning($"Sound:" + typeSound + " not found!");
                 return null;
             }
             return s;

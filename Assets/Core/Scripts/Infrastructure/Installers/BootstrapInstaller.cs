@@ -7,6 +7,7 @@ using Infrastructure.Services.DeviceData;
 using Infrastructure.Services.DeviceData.Abstractions;
 using Infrastructure.Services.Factories.Game;
 using Infrastructure.Services.Factories.UIFactory;
+using Infrastructure.Services.FPSMeters;
 using Infrastructure.Services.LocalizationService;
 using Infrastructure.Services.PersistenceProgress;
 using Infrastructure.Services.Random;
@@ -15,6 +16,7 @@ using Infrastructure.Services.Window;
 using Infrastructure.StateMachine;
 using Infrastructure.StateMachine.Game;
 using Infrastructure.StateMachine.Game.States;
+using Infrastructure.StateMachine.Game.States.LoadSceneStates;
 using UnityEngine;
 using Zenject;
 using Application = UnityEngine.Application;
@@ -128,7 +130,9 @@ namespace Infrastructure.Installers
             Container.Bind<LoadProgressState>().AsSingle();
             Container.Bind<BootstrapAnalyticState>().AsSingle();
             Container.Bind<BootstrapAudioState>().AsSingle();
-            Container.Bind<LoadLevelState>().AsSingle();
+            Container.Bind<DelegateStatesForSceneState>().AsSingle();
+            Container.Bind<LoadGameState>().AsSingle();
+            Container.Bind<LoadMenuState>().AsSingle();
             Container.Bind<LoadLocalizationState>().AsSingle();   
             Container.Bind<GameLoopState>().AsSingle();
         }

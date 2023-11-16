@@ -1,5 +1,5 @@
 ﻿using System;
-using Infrastructure.StateMachine.Game.States;
+using Infrastructure.StateMachine.Game;
 
 namespace Infrastructure.StateMachine
 {

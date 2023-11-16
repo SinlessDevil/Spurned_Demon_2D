@@ -4,20 +4,20 @@ using Infrastructure.Services.Factories.UIFactory;
 using Infrastructure.Services.StaticData;
 using Zenject;
 
-namespace Infrastructure.StateMachine.Game.States
+namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
 {
-    public class LoadLevelState : IPayloadedState<string>, IGameState
+    public abstract class BaseLoadSceneState : IPayloadedState<string>, IGameState
     {
-        private readonly ISceneLoader _sceneLoader;
-        private readonly ILoadingCurtain _loadingCurtain;
-        private readonly IUIFactory _uiFactory;
-        private readonly IStateMachine<IGameState> _gameStateMachine;
-        private readonly IGameFactory _gameFactory;
-        private readonly IStaticDataService _staticDataService;
-        private readonly IAudioClipsService _audioClipsService;
+        protected readonly ISceneLoader _sceneLoader;
+        protected readonly ILoadingCurtain _loadingCurtain;
+        protected readonly IUIFactory _uiFactory;
+        protected readonly IStateMachine<IGameState> _gameStateMachine;
+        protected readonly IGameFactory _gameFactory;
+        protected readonly IStaticDataService _staticDataService;
+        protected readonly IAudioClipsService _audioClipsService;
 
         [Inject]
-        public LoadLevelState(IStateMachine<IGameState> gameStateMachine, ISceneLoader sceneLoader, ILoadingCurtain loadingCurtain, 
+        public BaseLoadSceneState(IStateMachine<IGameState> gameStateMachine, ISceneLoader sceneLoader, ILoadingCurtain loadingCurtain, 
             IUIFactory uiFactory, IGameFactory gameFactory, IStaticDataService staticDataService, IAudioClipsService audioClipsService)
         {
             _gameFactory = gameFactory;
@@ -46,12 +46,7 @@ namespace Infrastructure.StateMachine.Game.States
             _gameStateMachine.Enter<LoadLocalizationState>();
         }
 
-        private void InitGameWorld()
-        {
-            InitUIRoot();
-
-            _audioClipsService.PlayClip(TypeSound.Menu); // Test
-        }
+        protected abstract void InitGameWorld();
 
         #region Init UI
         private void InitUIRoot()

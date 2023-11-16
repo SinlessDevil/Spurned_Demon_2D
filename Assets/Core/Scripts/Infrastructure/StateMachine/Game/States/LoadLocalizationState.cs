@@ -38,7 +38,7 @@ namespace Infrastructure.StateMachine.Game.States
         }
         private void InitLocolizeMenu(Localize[] localizes)
         {
-            var locolizeMenu = Object.FindObjectOfType<LocolizeMenu>();
+            var locolizeMenu = Object.FindObjectOfType<LocalizeMenu>();
 
             if(locolizeMenu != null) 
             {

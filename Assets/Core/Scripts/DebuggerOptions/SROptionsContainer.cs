@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using Infrastructure.StateMachine;
-using Infrastructure.StateMachine.Game.States;
+using Infrastructure.StateMachine.Game;
 using JetBrains.Annotations;
 using UnityEngine;
 

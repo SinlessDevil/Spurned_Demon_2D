@@ -31,7 +31,7 @@ namespace Infrastructure.StateMachine.Game.States
 
             InitSoundsInService(sounds);
 
-            _gameStateMachine.Enter<LoadLevelState, string>(payload);
+            _gameStateMachine.Enter<DelegateStatesForSceneState, string>(payload);
         }
         private GameObject CreateGameObejctAudioManager()
         {

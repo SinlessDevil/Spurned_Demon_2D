@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Infrastructure.StateMachine.Game.States;
+using Infrastructure.StateMachine.Game.States.LoadSceneStates;
 using Zenject;
 
 namespace Infrastructure.StateMachine.Game
@@ -17,7 +18,9 @@ namespace Infrastructure.StateMachine.Game
                 [typeof(LoadProgressState)] = container.Resolve<LoadProgressState>,
                 [typeof(BootstrapAnalyticState)] = container.Resolve<BootstrapAnalyticState>,
                 [typeof(BootstrapAudioState)] = container.Resolve<BootstrapAudioState>,
-                [typeof(LoadLevelState)] = container.Resolve<LoadLevelState>,
+                [typeof(DelegateStatesForSceneState)] = container.Resolve<DelegateStatesForSceneState>,
+                [typeof(LoadMenuState)] = container.Resolve<LoadMenuState>,
+                [typeof(LoadGameState)] = container.Resolve<LoadGameState>,
                 [typeof(LoadLocalizationState)] = container.Resolve<LoadLocalizationState>,
                 [typeof(GameLoopState)] = container.Resolve<GameLoopState>,          
             };

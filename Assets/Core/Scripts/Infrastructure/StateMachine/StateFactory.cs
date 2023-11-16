@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Infrastructure.StateMachine.Game.States;
+using Infrastructure.StateMachine.Game;
 using Zenject;
 
 namespace Infrastructure.StateMachine
