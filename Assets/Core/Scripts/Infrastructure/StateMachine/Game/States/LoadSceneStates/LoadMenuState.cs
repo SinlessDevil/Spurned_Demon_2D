@@ -16,12 +16,18 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
 
         protected override void InitGameWorld()
         {
-            InitMenuHud();
+            var menuHud = InitMenuHud();
+
+            InitSettings(menuHud);
+
+            InitMainMenu(menuHud);
 
             InitMenuMusic();
         }
 
         private MenuHud InitMenuHud() => _uiFactory.CreateMenuHud();
         private void InitMenuMusic() => _audioClipsService.PlayClip(TypeSound.Menu);
+        private void InitSettings(MenuHud menuHud) => menuHud.Settings.Initialize();
+        private void InitMainMenu(MenuHud menuHud) => menuHud.MainMenu.Initialize(menuHud.Settings);
     }
 }

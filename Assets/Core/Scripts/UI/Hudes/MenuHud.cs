@@ -4,6 +4,7 @@ namespace UI.Hudes
 {
     public class MenuHud : Hud
     {
-        [field: SerializeField] public GameObject Menu;
+        [field: SerializeField] public MainMenu MainMenu;
+        [field: SerializeField] public Settings Settings;
     }
 }
