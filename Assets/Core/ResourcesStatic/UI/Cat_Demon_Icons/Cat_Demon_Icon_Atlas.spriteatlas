@@ -44,7 +44,6 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 2966f3f31c17f81428bc73d6412896fa, type: 3}
-  - {fileID: 21300000, guid: 1e380ec678e39fd4d96de6b62bb05d36, type: 3}
   - {fileID: 21300000, guid: ff869be640857ce44ac1b4b6344a1b49, type: 3}
   - {fileID: 21300000, guid: 8277a339bd9f7034196fd65668755524, type: 3}
   - {fileID: 21300000, guid: 389ba35a08f1be442af4f13ef5a10d79, type: 3}
@@ -52,7 +51,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a1024f5a22c2ae64d9d0378a847b1acc, type: 3}
   m_PackedSpriteNamesToIndex:
   - Eyes
-  - Icon_Cat_Demon
   - Wing
   - Body
   - Horn

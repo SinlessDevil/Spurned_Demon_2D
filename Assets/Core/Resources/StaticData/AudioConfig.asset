@@ -15,7 +15,7 @@ MonoBehaviour:
   Sounds:
   - typeSound: 0
     clip: {fileID: 8300000, guid: 05ad35b74d214894399ab7ebaad4393a, type: 3}
-    volume: 1
+    volume: 0.1
     pitch: 1
     loop: 1
     playOnAwake: 1
