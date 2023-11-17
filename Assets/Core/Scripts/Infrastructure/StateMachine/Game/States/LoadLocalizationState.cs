@@ -1,6 +1,6 @@
 using Infrastructure.Services.LocalizationService;
 using UnityEngine;
-using UI;
+using UI.Hudes;
 using Zenject;
 
 namespace Infrastructure.StateMachine.Game.States

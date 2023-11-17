@@ -2,7 +2,7 @@ using Infrastructure.Services.AudioService;
 using Infrastructure.Services.Factories.Game;
 using Infrastructure.Services.Factories.UIFactory;
 using Infrastructure.Services.StaticData;
-using UI;
+using UI.Hudes;
 
 namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
 {

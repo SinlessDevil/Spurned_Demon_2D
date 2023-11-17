@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UI
+namespace UI.Hudes
 {
     public class MenuHud : Hud
     {

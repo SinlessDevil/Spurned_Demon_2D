@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Services.StaticData;
 using Infrastructure.StaticData;
 using UnityEngine;
-using UI;
+using UI.Hudes;
 using Window;
 using Zenject;
 

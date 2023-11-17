@@ -1,4 +1,4 @@
-﻿using UI;
+﻿using UI.Hudes;
 using UnityEngine;
 using Window;
 

@@ -1,7 +1,7 @@
 using Infrastructure.Services.LocalizationService;
 using UnityEngine;
 
-namespace UI
+namespace UI.Hudes
 {
     public class Hud : MonoBehaviour
     {
