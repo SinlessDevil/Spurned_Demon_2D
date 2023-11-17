@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bordes_Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 3ac0b4e40bbf0f9449f1d7a6d2a9baba, type: 3}
+    - {fileID: 2800000, guid: f03f625cc7127f244a2f4da835b92720, type: 3}
+    - {fileID: 2800000, guid: f38987b2f12030947bea58483e18ce1a, type: 3}
+    - {fileID: 2800000, guid: 9c9484e6914e5a548bf4edaa475239b6, type: 3}
+    - {fileID: 2800000, guid: def0b999bf90eaf48ad972dc8f98df24, type: 3}
+    - {fileID: 2800000, guid: c8a47b132ee4eff48bfeb344ad857e12, type: 3}
+    - {fileID: 2800000, guid: 7f61a1a97b4bba64fbfb788af1cea9e6, type: 3}
+    - {fileID: 2800000, guid: b0b2e82f84dad884f986de1deb5331a3, type: 3}
+    - {fileID: 2800000, guid: e2253fc5a4b357243ad2021031bd943a, type: 3}
+    - {fileID: 2800000, guid: 5d98067acd216d04aaa0a5c07e6b491f, type: 3}
+    - {fileID: 2800000, guid: 5c49ef3a1a4460b4ca3a969124efb7fa, type: 3}
+    - {fileID: 2800000, guid: 4859a9b48155b404492c5e59833bdea8, type: 3}
+    - {fileID: 2800000, guid: de5e4751c3719944aa6704fc67511221, type: 3}
+    - {fileID: 2800000, guid: 19e0bce67751785438b5135a43190ad6, type: 3}
+    - {fileID: 2800000, guid: 2ae02f309e37a7b468a607a66bbc4e6d, type: 3}
+    - {fileID: 2800000, guid: cc399a618123056498d011bef46ef430, type: 3}
+    - {fileID: 2800000, guid: d902ff2e3de1bd64fbab122e925ba234, type: 3}
+    - {fileID: 2800000, guid: d88b03a7da3ddc84b882c452fd42f025, type: 3}
+    - {fileID: 2800000, guid: 55df7c0e2aab60c438ae7184c5438d25, type: 3}
+    - {fileID: 2800000, guid: b325a13e94f3bac4199e75b91fa98449, type: 3}
+    - {fileID: 2800000, guid: b1e2bb5a32fee96498075a860def4696, type: 3}
+    - {fileID: 2800000, guid: bb72f5ca984e00d44aff91ecb54c2487, type: 3}
+    - {fileID: 2800000, guid: a85e0ef996389864d90fc222ee456814, type: 3}
+    - {fileID: 2800000, guid: 98257ce5f0f5491419a1a9d14bad67e1, type: 3}
+    - {fileID: 2800000, guid: a1f0628111b762a4ba22cea2c8d05a7a, type: 3}
+    - {fileID: 2800000, guid: ffb6cdaad30e2f04ba0bfd3b2e366da1, type: 3}
+    - {fileID: 2800000, guid: d932c376d1c47bd46acb782ac4161de6, type: 3}
+    - {fileID: 2800000, guid: b047f7fbe28c89042968b6b488a956fb, type: 3}
+    - {fileID: 2800000, guid: 8aabc0d6238472d488ed3d44a7afc347, type: 3}
+    - {fileID: 2800000, guid: 94ed127db6c44634db6082daf3b3ce2e, type: 3}
+    - {fileID: 2800000, guid: c0c647d8a1b24bc49b999c2a62137c00, type: 3}
+    - {fileID: 2800000, guid: 5765424b27ee5f8408478922c82d99a2, type: 3}
+    - {fileID: 2800000, guid: 71a5b04117cb01a449bbec4ada23fa35, type: 3}
+    - {fileID: 2800000, guid: c04a63d54069e8f4bac378fe7ab6026c, type: 3}
+    - {fileID: 2800000, guid: b155e3f4ed65dbf48a63147795b88097, type: 3}
+    - {fileID: 2800000, guid: c09c98233e3767545acc1ae234af060c, type: 3}
+    - {fileID: 2800000, guid: ff3d95e7e84ef024a998874a1a7b4479, type: 3}
+    - {fileID: 2800000, guid: af542a0a8ad9e534f8bb562f0fa25bf1, type: 3}
+    - {fileID: 2800000, guid: ca51c3340cb2d37489bcb1f1f5396589, type: 3}
+    - {fileID: 2800000, guid: f8ae8c6f4da93db408536798e4dc96cf, type: 3}
+    - {fileID: 2800000, guid: eaea90a025355c14b871008ae1ab621c, type: 3}
+    - {fileID: 2800000, guid: 210c9a2590bc76644b3043743da41996, type: 3}
+    - {fileID: 2800000, guid: dcbffc956c3007348a9d59e752d2d7ef, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2ae02f309e37a7b468a607a66bbc4e6d, type: 3}
+  - {fileID: 21300000, guid: eaea90a025355c14b871008ae1ab621c, type: 3}
+  - {fileID: 21300000, guid: 71a5b04117cb01a449bbec4ada23fa35, type: 3}
+  - {fileID: 21300000, guid: de5e4751c3719944aa6704fc67511221, type: 3}
+  - {fileID: 21300000, guid: cc399a618123056498d011bef46ef430, type: 3}
+  - {fileID: 21300000, guid: a1f0628111b762a4ba22cea2c8d05a7a, type: 3}
+  - {fileID: 21300000, guid: f38987b2f12030947bea58483e18ce1a, type: 3}
+  - {fileID: 21300000, guid: c8a47b132ee4eff48bfeb344ad857e12, type: 3}
+  - {fileID: 21300000, guid: c09c98233e3767545acc1ae234af060c, type: 3}
+  - {fileID: 21300000, guid: ca51c3340cb2d37489bcb1f1f5396589, type: 3}
+  - {fileID: 21300000, guid: 4859a9b48155b404492c5e59833bdea8, type: 3}
+  - {fileID: 21300000, guid: 3ac0b4e40bbf0f9449f1d7a6d2a9baba, type: 3}
+  - {fileID: 21300000, guid: b155e3f4ed65dbf48a63147795b88097, type: 3}
+  - {fileID: 21300000, guid: 210c9a2590bc76644b3043743da41996, type: 3}
+  - {fileID: 21300000, guid: dcbffc956c3007348a9d59e752d2d7ef, type: 3}
+  - {fileID: 21300000, guid: e2253fc5a4b357243ad2021031bd943a, type: 3}
+  - {fileID: 21300000, guid: c04a63d54069e8f4bac378fe7ab6026c, type: 3}
+  - {fileID: 21300000, guid: 98257ce5f0f5491419a1a9d14bad67e1, type: 3}
+  - {fileID: 21300000, guid: d932c376d1c47bd46acb782ac4161de6, type: 3}
+  - {fileID: 21300000, guid: 8aabc0d6238472d488ed3d44a7afc347, type: 3}
+  - {fileID: 21300000, guid: 9c9484e6914e5a548bf4edaa475239b6, type: 3}
+  - {fileID: 21300000, guid: 19e0bce67751785438b5135a43190ad6, type: 3}
+  - {fileID: 21300000, guid: d88b03a7da3ddc84b882c452fd42f025, type: 3}
+  - {fileID: 21300000, guid: ff3d95e7e84ef024a998874a1a7b4479, type: 3}
+  - {fileID: 21300000, guid: c0c647d8a1b24bc49b999c2a62137c00, type: 3}
+  - {fileID: 21300000, guid: def0b999bf90eaf48ad972dc8f98df24, type: 3}
+  - {fileID: 21300000, guid: 7f61a1a97b4bba64fbfb788af1cea9e6, type: 3}
+  - {fileID: 21300000, guid: a85e0ef996389864d90fc222ee456814, type: 3}
+  - {fileID: 21300000, guid: af542a0a8ad9e534f8bb562f0fa25bf1, type: 3}
+  - {fileID: 21300000, guid: 5c49ef3a1a4460b4ca3a969124efb7fa, type: 3}
+  - {fileID: 21300000, guid: b1e2bb5a32fee96498075a860def4696, type: 3}
+  - {fileID: 21300000, guid: 5d98067acd216d04aaa0a5c07e6b491f, type: 3}
+  - {fileID: 21300000, guid: ffb6cdaad30e2f04ba0bfd3b2e366da1, type: 3}
+  - {fileID: 21300000, guid: bb72f5ca984e00d44aff91ecb54c2487, type: 3}
+  - {fileID: 21300000, guid: 5765424b27ee5f8408478922c82d99a2, type: 3}
+  - {fileID: 21300000, guid: b047f7fbe28c89042968b6b488a956fb, type: 3}
+  - {fileID: 21300000, guid: f03f625cc7127f244a2f4da835b92720, type: 3}
+  - {fileID: 21300000, guid: 94ed127db6c44634db6082daf3b3ce2e, type: 3}
+  - {fileID: 21300000, guid: 55df7c0e2aab60c438ae7184c5438d25, type: 3}
+  - {fileID: 21300000, guid: d902ff2e3de1bd64fbab122e925ba234, type: 3}
+  - {fileID: 21300000, guid: b325a13e94f3bac4199e75b91fa98449, type: 3}
+  - {fileID: 21300000, guid: b0b2e82f84dad884f986de1deb5331a3, type: 3}
+  - {fileID: 21300000, guid: f8ae8c6f4da93db408536798e4dc96cf, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Basic Outline - Stroke 16px (300ppu)
+  - Rounded Outline - Stroke 16px
+  - Rounded Filled (500ppu)
+  - Basic Outline - Stroke 12px (300ppu)
+  - Basic Outline - Stroke 18px (300ppu)
+  - Rounded Circle (600ppu)
+  - Basic Filled (300ppu)
+  - Basic Outline - Stroke 4px (125ppu)
+  - Rounded Outline - Stroke 10px
+  - Rounded Outline - Stroke 14px
+  - Basic Outline - Stroke 10px (300ppu)
+  - Basic Filled (100ppu)
+  - Rounded Outline - Stroke 8px
+  - Rounded Outline - Stroke 18px
+  - Rounded Outline - Stroke 20px
+  - Basic Outline - Stroke 5px (200ppu)
+  - Rounded Outline - Stroke 5px
+  - Rounded Circle (500ppu)
+  - Rounded Circle (900ppu)
+  - Rounded Circle Outline - Stroke 8px (225ppu)
+  - Basic Filled (500ppu)
+  - Basic Outline - Stroke 14px (300ppu)
+  - GUI Skin - Button Normal
+  - Rounded Outline - Stroke 12px
+  - Rounded Circle Outline - Stroke 8px (900ppu)
+  - Basic Filled - Modal Tab Button (300ppu)
+  - Basic Outline - Stroke 4px (300ppu)
+  - Rounded Circle (450ppu)
+  - Rounded Outline - Stroke 14px (500ppu)
+  - Basic Outline - Stroke 8px (300ppu)
+  - Rounded Circle (250ppu)
+  - Basic Outline - Stroke 5px (300ppu)
+  - Rounded Circle (750ppu)
+  - Rounded Circle (400ppu)
+  - Rounded Filled (300ppu)
+  - Rounded Circle Outline - Stroke 6px (225ppu)
+  - Basic Filled (200ppu)
+  - Rounded Circle Outline - Stroke 8px (300ppu)
+  - GUI Skin - Button Pressed
+  - Basic Outline - Stroke 20px (300ppu)
+  - Square
+  - Basic Outline - Stroke 5px (100ppu)
+  - Rounded Outline - Stroke 16px (500ppu)
+  m_RenderDataMap: {}
+  m_Tag: Bordes_Atlas
+  m_IsVariant: 0
