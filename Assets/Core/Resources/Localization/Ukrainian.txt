@@ -8,3 +8,4 @@ gamekey	Гра
 russiankey	Російський
 englishkey	Англійська
 ukrainiankey	Український
+languagekey	Мова -
