@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Controller.Joysticks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,12 +47,10 @@ public class JoystickSetterExample : MonoBehaviour
                 break;
         }
     }
-
     public void SnapX(bool value)
     {
         variableJoystick.SnapX = value;
     }
-
     public void SnapY(bool value)
     {
         variableJoystick.SnapY = value;

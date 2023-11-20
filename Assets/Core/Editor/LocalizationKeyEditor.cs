@@ -3,7 +3,7 @@ using Infrastructure.Services.LocalizationService;
 using UnityEngine;
 using UnityEditor;
 
-namespace Editor
+namespace Editors
 {
     public class LocalizationKeyEditor : EditorWindow
     {
