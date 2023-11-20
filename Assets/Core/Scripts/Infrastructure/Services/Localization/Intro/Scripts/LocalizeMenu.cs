@@ -5,7 +5,7 @@ namespace Infrastructure.Services.LocalizationService
 {
     public class LocalizeMenu : MonoBehaviour
     {
-        private Localize[] _localizes;
+        [SerializeField] private Localize[] _localizes;
 
         private ILocaleService _localeService;
 

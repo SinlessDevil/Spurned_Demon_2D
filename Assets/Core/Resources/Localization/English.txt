@@ -1,3 +1,10 @@
-playy	Play
-exitt	Exit
-settingss	Settings
+playkey	Play
+exitkey	Exit
+settingskey	Settings
+qualitykey	Quality
+contollerkey	Controller
+audiokey	Audio
+gamekey	Game
+russiankey	Russian
+englishkey	English
+ukrainiankey	Ukrainian

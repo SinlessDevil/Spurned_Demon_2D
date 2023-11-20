@@ -1,3 +1,10 @@
-﻿playy	Грати
-exitt	Вихід
-settingss	Налаштування
+﻿playkey	Грати
+exitkey	Віхід
+settingskey	Налаштування
+qualitykey	Якість
+contollerkey	Управління
+audiokey	Звуки
+gamekey	Гра
+russiankey	Російський
+englishkey	Англійська
+ukrainiankey	Український

@@ -1,3 +1,10 @@
-﻿playy	Играть
-exitt	Выход
-settingss	Настройки
+﻿playkey	Играть
+exitkey	Выход
+settingskey	Настройки
+qualitykey	Качество
+contollerkey	Управление
+audiokey	Звуки
+gamekey	Игра
+russiankey	Русский
+englishkey	Английский
+ukrainiankey	Украинский

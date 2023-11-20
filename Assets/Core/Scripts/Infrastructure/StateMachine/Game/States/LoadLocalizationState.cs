@@ -43,14 +43,14 @@ namespace Infrastructure.StateMachine.Game.States
         private Hud FindHud() => Object.FindObjectOfType<Hud>();
         private Localize[] InitLocalizes()
         {
-            var lozalizes = Object.FindObjectsOfType<Localize>();
+            Localize[] allLocalizes = GameObject.FindObjectsOfType<Localize>(true);
 
-            foreach (var lozalize in lozalizes)
+            foreach (var lozalize in allLocalizes)
             {
                 lozalize.Initilize();
             }
 
-            return lozalizes;
+            return allLocalizes;
         }
         private void InitLocolizeMenu(Hud hud,Localize[] localizes) => hud.localizeMenu.Initialize(localizes);
 
