@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Main_Character_Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: fc07739660b526642920675cda281bdb, type: 3}
+    - {fileID: 2800000, guid: 3e85546a0289361488a707f0e3a960a4, type: 3}
+    - {fileID: 2800000, guid: 810c8d682d177b849b17623bb6efce39, type: 3}
+    - {fileID: 2800000, guid: df71e09849bb3424882fd35dbcad906a, type: 3}
+    - {fileID: 2800000, guid: 016a6766ca465f44098a36809a8d1403, type: 3}
+    - {fileID: 2800000, guid: f4c0c82b6287f9044b0b0f10be0019b5, type: 3}
+    - {fileID: 2800000, guid: 5a1e6df37c7e1e343afcef9d2bc9e784, type: 3}
+    - {fileID: 2800000, guid: 5fe4fccbb08121646be9c766633612b8, type: 3}
+    - {fileID: 2800000, guid: 69073128e58154f45928904faa601449, type: 3}
+    - {fileID: 2800000, guid: 67e6876e93167a94a8693fa54099e2f9, type: 3}
+    - {fileID: 2800000, guid: 9419996f4de84c94a9af37db9a9147a6, type: 3}
+    - {fileID: 2800000, guid: db41b3f80f2b42046afc15ac94f8e665, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5a1e6df37c7e1e343afcef9d2bc9e784, type: 3}
+  - {fileID: 21300000, guid: 016a6766ca465f44098a36809a8d1403, type: 3}
+  - {fileID: 21300000, guid: fc07739660b526642920675cda281bdb, type: 3}
+  - {fileID: 21300000, guid: 69073128e58154f45928904faa601449, type: 3}
+  - {fileID: 21300000, guid: 810c8d682d177b849b17623bb6efce39, type: 3}
+  - {fileID: 21300000, guid: df71e09849bb3424882fd35dbcad906a, type: 3}
+  - {fileID: 21300000, guid: db41b3f80f2b42046afc15ac94f8e665, type: 3}
+  - {fileID: 21300000, guid: 3e85546a0289361488a707f0e3a960a4, type: 3}
+  - {fileID: 21300000, guid: f4c0c82b6287f9044b0b0f10be0019b5, type: 3}
+  - {fileID: 21300000, guid: 5fe4fccbb08121646be9c766633612b8, type: 3}
+  - {fileID: 21300000, guid: 67e6876e93167a94a8693fa54099e2f9, type: 3}
+  - {fileID: 21300000, guid: 9419996f4de84c94a9af37db9a9147a6, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Head
+  - Leg_2
+  - Shawl
+  - Handle_1
+  - Shoulder
+  - Shawl_1
+  - Body
+  - "\u0421\u043B\u043E\u0439_1"
+  - Leg_1
+  - Handle_2
+  - Eyes_R
+  - Eyes_L
+  m_RenderDataMap: {}
+  m_Tag: Main_Character_Atlas
+  m_IsVariant: 0
