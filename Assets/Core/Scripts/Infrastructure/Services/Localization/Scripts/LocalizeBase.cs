@@ -7,6 +7,12 @@ namespace Infrastructure.Services.LocalizationService
     {
         [SerializeField] protected string _localizationKey;
 
+        public string LocalizationKey
+        {
+            get { return _localizationKey; }
+            set { _localizationKey = value; }
+        }
+
         protected ILocaleService _localeService;
 
         [Inject]

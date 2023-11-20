@@ -1,4 +1,3 @@
-using Extensions;
 using UnityEngine;
 
 namespace Factory
@@ -8,17 +7,6 @@ namespace Factory
         [SerializeField] private T _prefab;
         [SerializeField] private Transform _pointToSpawn;
         [SerializeField] private Transform _centerPoint;
-
-        private void Awake()
-        {
-            Asserts();
-        }
-        private void Asserts()
-        {
-            _prefab.LogErrorIfComponentNull();
-            _pointToSpawn.LogErrorIfComponentNull();
-            _centerPoint.LogErrorIfComponentNull();
-        }
 
         public T GetNewInstance()
         {

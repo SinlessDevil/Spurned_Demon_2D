@@ -18,6 +18,7 @@ namespace UI.Buttons.Animation
 
         private const float DuractionAnimation = 0.25f;
 
+        #region Init Methods
         protected override void Awake()
         {
             base.Awake();
@@ -42,7 +43,9 @@ namespace UI.Buttons.Animation
         {
             transform.localScale = Vector3.one;
         }
+        #endregion
 
+        #region Button Events Methods
         protected override void OnClick()
         {
             _bgImage.DOColor(_colorButtonUnselected, 0.1f).OnComplete(() =>
@@ -65,7 +68,9 @@ namespace UI.Buttons.Animation
         {
             transform.DOScale(1.2f, DuractionAnimation);
         }
+        #endregion
 
+        #region Release Methods
         public void ResetAniamtionRelease()
         {
             _bgImage.DOFillAmount(0f, DuractionAnimation).ChangeStartValue(1f);
@@ -84,5 +89,6 @@ namespace UI.Buttons.Animation
 
             _isActive = true;
         }
+        #endregion
     }
 }

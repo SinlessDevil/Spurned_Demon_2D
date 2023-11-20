@@ -327,7 +327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 446, y: 52.679993}
+  m_AnchoredPosition: {x: 439.5, y: 52.679993}
   m_SizeDelta: {x: -967, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6207255332146184342
@@ -694,7 +694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -163, y: 52}
+  m_AnchoredPosition: {x: -157.4, y: 52}
   m_SizeDelta: {x: -967, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6081346917558918756
@@ -1606,7 +1606,7 @@ GameObject:
   - component: {fileID: 5637435605831252771}
   - component: {fileID: 5637435605831252769}
   - component: {fileID: 5637435605831252770}
-  - component: {fileID: 202421339531484980}
+  - component: {fileID: 2991795915585649609}
   m_Layer: 5
   m_Name: Text_Settings
   m_TagString: Untagged
@@ -1731,7 +1731,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &202421339531484980
+--- !u!114 &2991795915585649609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3398,7 +3398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6688650549087450690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4097,7 +4097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 150.1, y: 52.339973}
+  m_AnchoredPosition: {x: 144.5, y: 52.339973}
   m_SizeDelta: {x: -966, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &40538757731567817

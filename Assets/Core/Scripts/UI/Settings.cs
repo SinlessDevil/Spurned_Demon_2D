@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UI.Buttons.Animation;
 using Extensions;
 using DG.Tweening;
-using UI.Buttons.Animation;
-using System.ComponentModel;
 
 namespace UI
 {
@@ -28,11 +27,13 @@ namespace UI
 
             SetUpStartParametrContainer();
 
+            _currentContainer = _containers[0];
+
+            _settingsPanel.SetActive(IsActivated);
+
             _initialized = true;
 
             SubscribeEvents();
-
-            _currentContainer = _containers[0];
         }
         private void Asserts()
         {
