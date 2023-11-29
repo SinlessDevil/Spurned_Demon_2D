@@ -40,16 +40,20 @@ namespace Entities.AnimationFSM
             }
         }
 
-        private void SetBehavior(ICharacterBehavior newBehavior){
+        private void SetBehavior(ICharacterBehavior newBehavior)
+        {
+            if (this._behaviorCurrent?.GetType() == newBehavior.GetType())
+                return;
+            
             this._behaviorCurrent?.Exit();
-
             this._behaviorCurrent = newBehavior;
             this._behaviorCurrent.Enter();
         }
         private void SetBehaviorByDefault(){
             SetAnimIdile();
         }
-        private ICharacterBehavior GetBehavior<T>() where T : ICharacterBehavior{
+        private ICharacterBehavior GetBehavior<T>() where T : ICharacterBehavior
+        {
             var type = typeof(T);
             return this._behaviorsMap[type];
         }

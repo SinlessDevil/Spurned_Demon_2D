@@ -14,6 +14,10 @@ namespace Entities.MovableEntity.Type
             set
             {
                 _isMoving = value;
+                
+                if(_isGround == false)
+                    return;
+                
                 if (_isMoving == true)
                 {
                     _stateAnimation.SetAnimMove();

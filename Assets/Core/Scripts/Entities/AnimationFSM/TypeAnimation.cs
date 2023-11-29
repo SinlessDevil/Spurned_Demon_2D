@@ -6,6 +6,7 @@ namespace Entities.AnimationFSM
         IsAttack,
         IsDead,
         IsTakeDamage,
-        IsJumping
+        IsJumping,
+        IsJump,
     }
 }

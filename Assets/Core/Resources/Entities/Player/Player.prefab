@@ -1415,7 +1415,7 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  _chekerRadius: 0.1
+  _chekerRadius: 0.2
 --- !u!1 &4300072955198811374
 GameObject:
   m_ObjectHideFlags: 0
