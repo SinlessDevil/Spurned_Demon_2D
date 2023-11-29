@@ -111,5 +111,5 @@ SpriteAtlas:
   - Vertical_Outline
   - AllAxis_Ridged
   m_RenderDataMap: {}
-  m_Tag: Joystic_Circle_Atlas
+  m_Tag: Joystic_Atlas
   m_IsVariant: 0

@@ -1,4 +1,6 @@
 ﻿using Infrastructure.Services.StaticData;
+using UnityEngine;
+using Entities.MovableEntity.Type;
 using Zenject;
 
 namespace Infrastructure.Services.Factories.Game
@@ -12,6 +14,12 @@ namespace Infrastructure.Services.Factories.Game
         {
             _instantiator = instantiator;
             _staticData = staticDataService;
+        }
+
+        public Player CreatePlayer(Vector3 spawnPosition)
+        {
+            var player = Instantiate(_staticData.PlayerConfig.Prefab, spawnPosition, Quaternion.identity,null);
+            return player.GetComponent<Player>();
         }
     }
 }

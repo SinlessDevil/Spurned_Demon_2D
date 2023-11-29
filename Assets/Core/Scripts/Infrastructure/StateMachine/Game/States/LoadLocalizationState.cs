@@ -25,7 +25,7 @@ namespace Infrastructure.StateMachine.Game.States
 
             var lozalizes = InitLocalizes();
 
-            InitLocolizeMenu(hud, lozalizes);
+            InitLocalizeMenu(hud, lozalizes);
 
             _gameStateMachine.Enter<GameLoopState>();
         }
@@ -52,7 +52,12 @@ namespace Infrastructure.StateMachine.Game.States
 
             return allLocalizes;
         }
-        private void InitLocolizeMenu(Hud hud,Localize[] localizes) => hud.localizeMenu.Initialize(localizes);
+
+        private void InitLocalizeMenu(Hud hud, Localize[] localizes)
+        {
+            if(hud.localizeMenu != null) 
+                hud.localizeMenu.Initialize(localizes);
+        }
 
         public void Exit()
         {

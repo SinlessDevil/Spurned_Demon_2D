@@ -7,6 +7,8 @@ namespace Infrastructure.Services.StaticData
     {
         GameStaticData GameConfig { get; }
         AudioStaticData AudioConfig { get; }
+        PlayerStaticData PlayerConfig { get; }
+
         BalanceStaticData Balance { get; }
 
         void LoadData();
