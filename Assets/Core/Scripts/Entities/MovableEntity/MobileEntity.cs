@@ -34,7 +34,7 @@ namespace Entities.MovableEntity
         public bool IsGound { get => _isGround; set => _isGround = value; }
         
         #region Init Methods
-        public void Initialize()
+        public virtual void Initialize()
         {
             InitComponent();
             InitVectorLooks();
@@ -43,7 +43,7 @@ namespace Entities.MovableEntity
 
             _isInitialize = true;
         }
-        private void InitComponent()
+        protected virtual void InitComponent()
         {
             _rb = GetComponent<Rigidbody2D>();
         }
@@ -52,7 +52,7 @@ namespace Entities.MovableEntity
             _lookRight = new Vector3(0, 0, 0);
             _lookLeft = new Vector3(0, 180, 0);
         }
-        private void Asserts()
+        protected virtual void Asserts()
         {
             _bodyChaaracter.LogErrorIfComponentNull();
             _chekerGroundPos.LogErrorIfComponentNull();
