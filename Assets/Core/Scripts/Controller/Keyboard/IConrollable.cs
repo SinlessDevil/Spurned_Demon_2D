@@ -4,7 +4,7 @@ namespace Controller.Keyboard
     {
         bool IsMoving { get; set; }
         bool IsJumping { get; set; }
-        bool IsGound { get; }
+        bool IsGround { get; }
         public void Jump();
         public void MoveTo(float direction);
         public void FlipBody(float moveInput);

@@ -37,7 +37,7 @@ namespace Controller.Keyboard
                 _controllable.IsMoving = true;
             }
 
-            if (moveInput == 0)
+            if (moveInput == 0 && _controllable.IsMoving == true)
             {
                 _controllable.IsMoving = false;
             }
@@ -53,7 +53,7 @@ namespace Controller.Keyboard
                 _controllable.IsMoving = true;
             }
             
-            if (moveInput == 0)
+            if (moveInput == 0 && _controllable.IsMoving == true)
             {
                 _controllable.IsMoving = false;
             }
@@ -64,7 +64,7 @@ namespace Controller.Keyboard
             {
                 _controllable.IsJumping = true;
 
-                if (_controllable.IsJumping == true && _controllable.IsGound == true)
+                if (_controllable.IsJumping == true && _controllable.IsGround == true)
                 {
                     _controllable.Jump();
                 }

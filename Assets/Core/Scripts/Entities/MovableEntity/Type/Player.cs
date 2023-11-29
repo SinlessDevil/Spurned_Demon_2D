@@ -13,7 +13,8 @@ namespace Entities.MovableEntity.Type
         {
             set
             {
-                if (value == true)
+                _isMoving = value;
+                if (_isMoving == true)
                 {
                     _stateAnimation.SetAnimMove();
                 }
@@ -23,12 +24,12 @@ namespace Entities.MovableEntity.Type
                 }
             }
         }
-        
-        public override bool IsJumping
+        public override bool IsGround
         {
             set
             {
-                if (value == true)
+                _isGround = value;
+                if (_isGround == false)
                 {
                     _stateAnimation.SetAnimJump();
                 }
@@ -47,11 +48,13 @@ namespace Entities.MovableEntity.Type
 
         protected override void InitComponent()
         {
+            base.InitComponent();
             _animator = GetComponent<Animator>();
             _stateAnimation = new(_animator);
         }
         protected override void Asserts()
         {
+            base.Asserts();
             _animator.LogErrorIfComponentNull();
             _stateAnimation.LogErrorIfComponentNull();
         }
