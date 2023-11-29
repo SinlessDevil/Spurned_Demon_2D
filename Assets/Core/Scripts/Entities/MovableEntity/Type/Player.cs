@@ -7,5 +7,6 @@ namespace Entities.MovableEntity.Type
             _moveSpeed = moveSpeed;
             _jumpHeight = jumpHeight;
         }
+        
     }
 }

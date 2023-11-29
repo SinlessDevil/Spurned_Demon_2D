@@ -13,15 +13,11 @@ namespace Entities.MovableEntity
         [SerializeField] private LayerMask _whatIsGround;
         [SerializeField] private float _chekerRadius;
 
-        public bool IsJumping { get => _isJump; set => _isJump = value; }
-        public bool IsGound { get => _isGround; set => _isGround = value; }
-
+        private bool _isInitialize;
+        
         protected float _moveSpeed;
         protected float _jumpHeight;
-
-        private bool _isJump;
-        private bool _isGround;
-
+        
         private Rigidbody2D _rb;
 
         private float _moveInput;
@@ -29,8 +25,14 @@ namespace Entities.MovableEntity
         private Vector2 _lookRight;
         private Vector2 _lookLeft;
 
-        private bool _isInitialize;
-
+        private bool _isJump;
+        private bool _isGround;
+        private bool _isMoving;
+        
+        public virtual bool IsMoving { get => _isMoving; set => _isMoving = value; }
+        public  virtual bool IsJumping { get => _isJump; set => _isJump = value; }
+        public bool IsGound { get => _isGround; set => _isGround = value; }
+        
         #region Init Methods
         public void Initialize()
         {
@@ -66,13 +68,14 @@ namespace Entities.MovableEntity
         }
 
         #region Controllable Methods
-        public void Jump() => _rb.velocity = Vector2.up * _jumpHeight;
+        public virtual void Jump() => _rb.velocity = Vector2.up * _jumpHeight;
         private bool IsOnTheGround() => Physics2D.OverlapCircle(_chekerGroundPos.position, _chekerRadius, _whatIsGround);
 
-        public void MoveTo(float moveInput)
+        public virtual void MoveTo(float moveInput)
         {
             _moveInput = moveInput;
-            _rb.velocity = new Vector2(_moveInput * _moveSpeed, _rb.velocity.y);
+            float moveAmount = _moveInput * _moveSpeed;
+            transform.position += new Vector3(moveAmount * Time.deltaTime, 0, 0);
         }
         public void FlipBody(float moveInput)
         {

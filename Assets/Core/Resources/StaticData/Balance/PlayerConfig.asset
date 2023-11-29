@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 4300072955005980937, guid: 377daf601ec84024687b13955eded4b8, type: 3}
   MoveSpeed: 10
-  JumpSpeed: 3
+  JumpHeight: 8

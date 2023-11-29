@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Controller.Keyboard
@@ -21,26 +22,40 @@ namespace Controller.Keyboard
                 return;
 
             InputMoveLeft();
-
             InputMoveRight();
-
             InputJump();
         }
-
+        
         private void InputMoveRight()
         {
-            if (Input.GetKeyDown(KeyCode.D))
+            float moveInput = Input.GetAxis("Horizontal");
+            if (moveInput > 0)
             {
-                _controllable.MoveTo(1);
-                _controllable.FlipBody(1);
+                _controllable.MoveTo(moveInput);
+                _controllable.FlipBody(moveInput);
+                
+                _controllable.IsMoving = true;
+            }
+
+            if (moveInput == 0)
+            {
+                _controllable.IsMoving = false;
             }
         }
         private void InputMoveLeft()
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            float moveInput = Input.GetAxis("Horizontal");
+            if (moveInput < 0)
             {
-                _controllable.MoveTo(-1);
-                _controllable.FlipBody(-1);
+                _controllable.MoveTo(moveInput);
+                _controllable.FlipBody(moveInput);
+                
+                _controllable.IsMoving = true;
+            }
+            
+            if (moveInput == 0)
+            {
+                _controllable.IsMoving = false;
             }
         }
         private void InputJump()
