@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Entities.AnimationFSM.StateBehavior;
+using Infrastructure.Services.Coroutines;
 using UnityEngine;
+using Entities.AnimationFSM.StateBehavior;
 
 namespace Entities.AnimationFSM
 {
@@ -11,16 +12,15 @@ namespace Entities.AnimationFSM
         private ICharacterBehavior _behaviorCurrent;
 
         private Animator _animator;
-
-        public StateAnimation(Animator animator)
-        {
-            InitAnimator(animator);
-            InitBehaviors();
-            SetBehaviorByDefault();
-        }
-        private void InitAnimator(Animator animator)
+        private ICoroutineService _coroutineService;
+        
+        public StateAnimation(Animator animator, ICoroutineService coroutineService)
         {
             _animator = animator;
+            _coroutineService = coroutineService;
+            
+            InitBehaviors();
+            SetBehaviorByDefault();
         }
         private void InitBehaviors()
         {
@@ -36,10 +36,19 @@ namespace Entities.AnimationFSM
 
             foreach (var behavior in _behaviorsMap.Values)
             {
-                behavior.Init(_animator);
+                behavior.Init(_animator, _coroutineService);
             }
         }
-
+        private void SetBehaviorByDefault()
+        {
+            SetAnimIdile();
+        }
+        
+        public void UpdateCurrentState()
+        {
+            _behaviorCurrent.Update();
+        }
+        
         private void SetBehavior(ICharacterBehavior newBehavior)
         {
             if (this._behaviorCurrent?.GetType() == newBehavior.GetType())
@@ -49,20 +58,19 @@ namespace Entities.AnimationFSM
             this._behaviorCurrent = newBehavior;
             this._behaviorCurrent.Enter();
         }
-        private void SetBehaviorByDefault(){
-            SetAnimIdile();
-        }
         private ICharacterBehavior GetBehavior<T>() where T : ICharacterBehavior
         {
             var type = typeof(T);
             return this._behaviorsMap[type];
         }
 
-        public void SetAnimIdile(){
+        public void SetAnimIdile()
+        {
             var behaviorByDefault = this.GetBehavior<AnimIdileState>();
             this.SetBehavior(behaviorByDefault);
         }
-        public void SetAnimMove(){
+        public void SetAnimMove()
+        {
             var behaviorByMove = this.GetBehavior<AnimMoveState>();
             this.SetBehavior(behaviorByMove);
         }

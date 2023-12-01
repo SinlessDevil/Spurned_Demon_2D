@@ -1,6 +1,9 @@
+using System;
 using Entities.AnimationFSM;
 using Extensions;
+using Infrastructure.Services.Coroutines;
 using UnityEngine;
+using Zenject;
 
 namespace Entities.MovableEntity.Type
 {
@@ -8,6 +11,14 @@ namespace Entities.MovableEntity.Type
     {
         private StateAnimation _stateAnimation;
         private Animator _animator;
+
+        private ICoroutineService _coroutineService;
+        
+        [Inject]
+        public void Constructor(ICoroutineService coroutineService)
+        {
+            _coroutineService = coroutineService;
+        }
         
         public override bool IsMoving
         {
@@ -54,13 +65,18 @@ namespace Entities.MovableEntity.Type
         {
             base.InitComponent();
             _animator = GetComponent<Animator>();
-            _stateAnimation = new(_animator);
+            _stateAnimation = new(_animator, _coroutineService);
         }
         protected override void Asserts()
         {
             base.Asserts();
             _animator.LogErrorIfComponentNull();
             _stateAnimation.LogErrorIfComponentNull();
+        }
+
+        private void Update()
+        {
+            _stateAnimation.UpdateCurrentState();
         }
     }
 }

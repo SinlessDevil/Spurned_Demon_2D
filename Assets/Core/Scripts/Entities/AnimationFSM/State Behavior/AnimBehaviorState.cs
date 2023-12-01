@@ -1,3 +1,4 @@
+using Infrastructure.Services.Coroutines;
 using UnityEngine;
 
 namespace Entities.AnimationFSM.StateBehavior
@@ -5,13 +6,16 @@ namespace Entities.AnimationFSM.StateBehavior
     public abstract class AnimBehaviorState : ICharacterBehavior
     {
         protected Animator _anim;
-
-        public void Init(Animator anim)
+        protected ICoroutineService _coroutineService;
+        
+        public void Init(Animator anim, ICoroutineService coroutineService)
         {
-            this._anim = anim;
+            _anim = anim;
+            _coroutineService = coroutineService;
         }
 
         public virtual void Enter() { }
         public virtual void Exit() { }
+        public virtual void Update() { }
     }
 }

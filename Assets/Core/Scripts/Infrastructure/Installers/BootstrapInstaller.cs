@@ -3,6 +3,7 @@ using Infrastructure.Services.Analytics;
 using Infrastructure.Services.AppInfo;
 using Infrastructure.Services.AppInfo.Abstractions;
 using Infrastructure.Services.AudioService;
+using Infrastructure.Services.Coroutines;
 using Infrastructure.Services.DeviceData;
 using Infrastructure.Services.DeviceData.Abstractions;
 using Infrastructure.Services.Factories.Game;
@@ -62,7 +63,8 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<GameFactory>().AsSingle();
             Container.BindInterfacesTo<AudioClipsService>().AsSingle();
             Container.BindInterfacesTo<LocaleService>().AsSingle();
-
+            Container.BindInterfacesTo<CoroutineService>().AsSingle();
+            
             BindEnrichedAnalyticService<AnalyticService>();
             BindDeviceDataService(); 
             BindAppInfoService();
