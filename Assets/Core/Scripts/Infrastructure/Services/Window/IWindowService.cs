@@ -1,9 +1,10 @@
-﻿using Window;
+﻿using UnityEngine;
+using Window;
 
 namespace Infrastructure.Services.Window
 {
   public interface IWindowService
   {
-    void Open(WindowTypeId windowTypeId);
+    RectTransform Open(WindowTypeId windowTypeId);
   }
 }

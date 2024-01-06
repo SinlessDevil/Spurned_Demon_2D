@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Services.Factories.UIFactory;
+using UnityEngine;
 using Window;
 using Zenject;
 
@@ -14,9 +15,9 @@ namespace Infrastructure.Services.Window
             _uiFactory = uiFactory;
         }
 
-        public void Open(WindowTypeId windowTypeId)
+        public RectTransform Open(WindowTypeId windowTypeId)
         {
-            _uiFactory.CrateWindow(windowTypeId);
+            return _uiFactory.CrateWindow(windowTypeId);
         }
     }
 }
