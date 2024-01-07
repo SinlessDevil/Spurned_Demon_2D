@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,6 +57,7 @@ MonoBehaviour:
     _displayWarningWhenResolvingDuringInstall: 1
     _validationRootResolveMethod: 0
     _validationErrorResponse: 0
+    _constructorChoiceStrategy: 0
     _signalSettings:
       _defaultSyncMode: 0
       _missingHandlerDefaultResponse: 2
@@ -73,7 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cecdb26d8aaa8d34291091e66ae70bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coroutineRunner: {fileID: 6199332711817758979, guid: 7b75fee2219439b47b2c5f3631896c47,
-    type: 3}
-  _curtain: {fileID: 7063499391173149961, guid: a9f82543a634f354981d42c373d5c517,
-    type: 3}
+  _coroutineRunner: {fileID: 6199332711817758979, guid: 7b75fee2219439b47b2c5f3631896c47, type: 3}
+  _curtain: {fileID: 7063499391173149961, guid: a9f82543a634f354981d42c373d5c517, type: 3}
+  _timeService: {fileID: 946030257274327455, guid: 1acae75750f5cfe4b890399a53689615, type: 3}

@@ -17,6 +17,7 @@ using Infrastructure.Services.LocalizationService;
 using Infrastructure.Services.PersistenceProgress;
 using Infrastructure.Services.Random;
 using Infrastructure.Services.StaticData;
+using Infrastructure.Services.Timer;
 using Infrastructure.Services.Window;
 using Infrastructure.StateMachine;
 using Infrastructure.StateMachine.Game;
@@ -32,6 +33,7 @@ namespace Infrastructure.Installers
     {
         [SerializeField] private CoroutineRunner _coroutineRunner;
         [SerializeField] private LoadingCurtain _curtain;
+        [SerializeField] private TimeService _timeService;
 
         private RuntimePlatform Platform => Application.platform;
 
@@ -51,7 +53,8 @@ namespace Infrastructure.Installers
         {
             Container.Bind<ICoroutineRunner>().FromMethod(() => Container.InstantiatePrefabForComponent<ICoroutineRunner>(_coroutineRunner)).AsSingle();
             Container.Bind<ILoadingCurtain>().FromMethod(() => Container.InstantiatePrefabForComponent<ILoadingCurtain>(_curtain)).AsSingle();
-
+            Container.Bind<ITimeService>().FromMethod(() => Container.InstantiatePrefabForComponent<ITimeService>(_timeService)).AsSingle();
+            
             BindSceneLoader();
         }
 
