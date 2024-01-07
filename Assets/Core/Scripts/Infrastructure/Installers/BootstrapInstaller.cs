@@ -12,6 +12,7 @@ using Infrastructure.Services.Finish;
 using Infrastructure.Services.Finish.Lose;
 using Infrastructure.Services.Finish.Win;
 using Infrastructure.Services.FPSMeters;
+using Infrastructure.Services.FxEffect;
 using Infrastructure.Services.LocalizationService;
 using Infrastructure.Services.PersistenceProgress;
 using Infrastructure.Services.Random;
@@ -70,6 +71,7 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<AudioClipsService>().AsSingle();
             Container.BindInterfacesTo<LocaleService>().AsSingle();
             Container.BindInterfacesTo<CoroutineService>().AsSingle();
+            Container.BindInterfacesTo<FxEffectService>().AsSingle();
             
             BindEnrichedAnalyticService<AnalyticService>();
             BindDeviceDataService(); 

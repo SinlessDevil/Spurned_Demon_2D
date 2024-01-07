@@ -1,6 +1,7 @@
 ﻿using Infrastructure.Services.StaticData;
 using UnityEngine;
 using Entities.MovableEntity.Type;
+using Infrastructure.StaticData;
 using Zenject;
 
 namespace Infrastructure.Services.Factories.Game
@@ -20,6 +21,13 @@ namespace Infrastructure.Services.Factories.Game
         {
             var player = Instantiate(_staticData.PlayerConfig.Prefab, spawnPosition, Quaternion.identity,null);
             return player.GetComponent<Player>();
+        }
+
+        public ParticleSystem CreateFxEffect(FxTypeId fxTypeId,Vector3 spawnPos)
+        {
+            FxEffectConfig config = _staticData.ForFxEffect(fxTypeId);
+            var fxEffect = Instantiate(config.FxPrefab.gameObject, spawnPos, Quaternion.identity,null);
+            return fxEffect.GetComponent<ParticleSystem>();
         }
     }
 }

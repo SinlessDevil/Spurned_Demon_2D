@@ -8,6 +8,6 @@ namespace Infrastructure.StaticData
     {
         public GameObject Prefab;
         public float MoveSpeed;
-        [FormerlySerializedAs("JumpSpeed")] public float JumpHeight;
+        public float JumpHeight;
     }
 }

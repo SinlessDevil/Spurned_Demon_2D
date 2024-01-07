@@ -14,5 +14,6 @@ namespace Infrastructure.Services.StaticData
         void LoadData();
 
         WindowConfig ForWindow(WindowTypeId windowTypeId);
+        FxEffectConfig ForFxEffect(FxTypeId fxTypeId);
     }
 }

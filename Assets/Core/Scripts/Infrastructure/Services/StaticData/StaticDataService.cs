@@ -12,6 +12,7 @@ namespace Infrastructure.Services.StaticData
         private const string GameBalancePath = "StaticData/Balance/Balance";
         private const string PlayerConfigPath = "StaticData/Balance/PlayerConfig";
         private const string WindowsStaticDataPath = "StaticData/WindowsStaticData";
+        private const string FxEffectStaticDataPath = "StaticData/FxEffectStaticData";
         private const string AudioStaticDataPath = "StaticData/AudioConfig";
 
         private GameStaticData _gameStaticData;
@@ -20,11 +21,11 @@ namespace Infrastructure.Services.StaticData
         private PlayerStaticData _playerStaticData;
 
         private Dictionary<WindowTypeId, WindowConfig> _windowConfigs;
-
+        private Dictionary<FxTypeId, FxEffectConfig> _effectConfigs;
+        
         public GameStaticData GameConfig => _gameStaticData;
         public AudioStaticData AudioConfig => _audioStaticData;
         public BalanceStaticData Balance => _balanceStaticData;
-
         public PlayerStaticData PlayerConfig => _playerStaticData;
 
         public void LoadData()
@@ -44,9 +45,16 @@ namespace Infrastructure.Services.StaticData
             _windowConfigs = Resources
                 .Load<WindowStaticData>(WindowsStaticDataPath)
                 .Configs.ToDictionary(x => x.WindowTypeId, x => x);
+            
+            _effectConfigs = Resources
+                .Load<FxEffectStaticData>(FxEffectStaticDataPath)
+                .FxEffectContainers.ToDictionary(x => x.FxType, x => x);
         }
 
         public WindowConfig ForWindow(WindowTypeId windowTypeId) => 
             _windowConfigs[windowTypeId];
+        
+        public FxEffectConfig ForFxEffect(FxTypeId fxTypeId) => 
+            _effectConfigs[fxTypeId];
     }
 }
