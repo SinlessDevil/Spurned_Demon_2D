@@ -38,13 +38,11 @@ namespace StorageService
                 else
                 {
                     Debug.LogWarning($"File not found at path: {path}");
-                    //   callback?.Invoke(default);
                 }
             }
             catch (Exception e)
             {
                 Debug.LogError($"Failed to load data from file: {e}");
-                //  callback?.Invoke(default);
             }
         }
 

@@ -16,6 +16,7 @@ using Infrastructure.Services.FxEffect;
 using Infrastructure.Services.LocalizationService;
 using Infrastructure.Services.PersistenceProgress;
 using Infrastructure.Services.Random;
+using Infrastructure.Services.SaveLoad;
 using Infrastructure.Services.StaticData;
 using Infrastructure.Services.Timer;
 using Infrastructure.Services.Window;
@@ -75,6 +76,7 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<LocaleService>().AsSingle();
             Container.BindInterfacesTo<CoroutineService>().AsSingle();
             Container.BindInterfacesTo<FxEffectService>().AsSingle();
+            Container.BindInterfacesTo<SaveLoadService>().AsSingle();
             
             BindEnrichedAnalyticService<AnalyticService>();
             BindDeviceDataService(); 
