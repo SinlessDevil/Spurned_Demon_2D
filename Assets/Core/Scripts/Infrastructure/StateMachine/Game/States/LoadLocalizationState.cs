@@ -55,7 +55,7 @@ namespace Infrastructure.StateMachine.Game.States
 
         private void InitLocalizeMenu(Hud hud, Localize[] localizes)
         {
-            if(hud.localizeMenu != null) 
+            if(hud != null) 
                 hud.localizeMenu.Initialize(localizes);
         }
 
