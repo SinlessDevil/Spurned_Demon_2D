@@ -10,8 +10,8 @@ namespace Infrastructure.Services.Factories.UIFactory
     public class UIFactory : Factory, IUIFactory
     {
         private const string UiRootPath = "UI/UiRoot";
-        private const string GameHudPath = "Hud/GameHud";
-        private const string MenuHudPath = "Hud/MenuHud";
+        private const string GameHudPath = "UI/Hud/GameHud";
+        private const string MenuHudPath = "UI/Hud/MenuHud";
 
         private readonly IInstantiator _instantiator;
         private readonly IStaticDataService _staticData;
@@ -30,7 +30,7 @@ namespace Infrastructure.Services.Factories.UIFactory
         {
             throw new System.NotImplementedException();
         }
-
+        
         public MenuHud CreateMenuHud() => Instantiate(MenuHudPath).GetComponent<MenuHud>();
 
         public RectTransform CrateWindow(WindowTypeId windowTypeId)
