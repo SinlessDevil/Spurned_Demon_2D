@@ -10,22 +10,25 @@ namespace Infrastructure.Services.StaticData
     {
         private const string GameConfigPath = "StaticData/Balance/GameConfig";
         private const string GameBalancePath = "StaticData/Balance/Balance";
-        private const string PlayerConfigPath = "StaticData/Balance/PlayerConfig";
+        private const string AudioStaticDataPath = "StaticData/Balance/AudioConfig";
+        private const string FxEffectStaticDataPath = "StaticData/Balance/FxEffectStaticData";
+        private const string PathResourcesConfigPath = "StaticData/Balance/PathConfig";
+        private const string PlayerConfigPath = "StaticData/Entities/PlayerConfig";
         private const string WindowsStaticDataPath = "StaticData/WindowsStaticData";
-        private const string FxEffectStaticDataPath = "StaticData/FxEffectStaticData";
-        private const string AudioStaticDataPath = "StaticData/AudioConfig";
 
         private GameStaticData _gameStaticData;
         private BalanceStaticData _balanceStaticData;
         private AudioStaticData _audioStaticData;
         private PlayerStaticData _playerStaticData;
+        private PathResourcesStaticData _pathResourcesStaticData;
 
         private Dictionary<WindowTypeId, WindowConfig> _windowConfigs;
         private Dictionary<FxTypeId, FxEffectConfig> _effectConfigs;
-        
+
+        public BalanceStaticData Balance => _balanceStaticData;
         public GameStaticData GameConfig => _gameStaticData;
         public AudioStaticData AudioConfig => _audioStaticData;
-        public BalanceStaticData Balance => _balanceStaticData;
+        public PathResourcesStaticData PathResourcesConfig => _pathResourcesStaticData;
         public PlayerStaticData PlayerConfig => _playerStaticData;
 
         public void LoadData()
@@ -41,6 +44,9 @@ namespace Infrastructure.Services.StaticData
 
             _playerStaticData = Resources
                 .Load<PlayerStaticData>(PlayerConfigPath);
+
+            _pathResourcesStaticData = Resources
+                .Load<PathResourcesStaticData>(PathResourcesConfigPath);
 
             _windowConfigs = Resources
                 .Load<WindowStaticData>(WindowsStaticDataPath)

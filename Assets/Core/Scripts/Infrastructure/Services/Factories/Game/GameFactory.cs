@@ -19,15 +19,16 @@ namespace Infrastructure.Services.Factories.Game
 
         public Player CreatePlayer(Vector3 spawnPosition)
         {
-            var player = Instantiate(_staticData.PlayerConfig.Prefab, spawnPosition, Quaternion.identity,null);
+            var player = Instantiate(Path.PlayerPath, spawnPosition, Quaternion.identity,null);
             return player.GetComponent<Player>();
         }
-
         public ParticleSystem CreateFxEffect(FxTypeId fxTypeId,Vector3 spawnPos)
         {
             FxEffectConfig config = _staticData.ForFxEffect(fxTypeId);
             var fxEffect = Instantiate(config.FxPrefab.gameObject, spawnPos, Quaternion.identity,null);
             return fxEffect.GetComponent<ParticleSystem>();
         }
+        
+        private PathResourcesStaticData Path => _staticData.PathResourcesConfig;
     }
 }

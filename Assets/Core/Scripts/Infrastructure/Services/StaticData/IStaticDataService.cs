@@ -7,10 +7,11 @@ namespace Infrastructure.Services.StaticData
     {
         GameStaticData GameConfig { get; }
         AudioStaticData AudioConfig { get; }
-        PlayerStaticData PlayerConfig { get; }
-
         BalanceStaticData Balance { get; }
-
+        PathResourcesStaticData PathResourcesConfig { get; }
+        
+        PlayerStaticData PlayerConfig { get; }
+        
         void LoadData();
 
         WindowConfig ForWindow(WindowTypeId windowTypeId);

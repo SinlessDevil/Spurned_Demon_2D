@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d00b7005a47ef47802a8421dc6baf6, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _uiInputMode: 0
   _defaultTab: 2
   _triggerEnableMode: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   _profilerAlignment: 0
   _optionsAlignment: 3
   _consoleAlignment: 0
-  _triggerPosition: 2
+  _triggerPosition: 6
   _maximumConsoleEntries: 1500
   _enableEventSystemCreation: 1
   _automaticShowCursor: 0
