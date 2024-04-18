@@ -9,10 +9,6 @@ namespace Infrastructure.Services.Factories.UIFactory
 {
     public class UIFactory : Factory, IUIFactory
     {
-        private const string UiRootPath = "UI/UiRoot";
-        private const string GameHudPath = "UI/Hud/GameHud";
-        private const string MenuHudPath = "UI/Hud/MenuHud";
-
         private readonly IInstantiator _instantiator;
         private readonly IStaticDataService _staticData;
 
@@ -24,20 +20,17 @@ namespace Infrastructure.Services.Factories.UIFactory
             _staticData = staticDataService;
         }
 
-        public void CreateUiRoot() => _uiRoot = Instantiate(UiRootPath).transform;
-
-        public void CreateGameHud()
-        {
-            throw new System.NotImplementedException();
-        }
-        
-        public MenuHud CreateMenuHud() => Instantiate(MenuHudPath).GetComponent<MenuHud>();
-
         public RectTransform CrateWindow(WindowTypeId windowTypeId)
         {
             WindowConfig config = _staticData.ForWindow(windowTypeId);
             GameObject window = Instantiate(config.Prefab, _uiRoot);
             return window.GetComponent<RectTransform>();
         }
+
+        public void CreateUiRoot() => _uiRoot = Instantiate(Path.UiRootPath).transform;
+        public void CreateGameHud() => Instantiate(Path.GameHudPath).GetComponent<GameHud>();
+        public MenuHud CreateMenuHud() => Instantiate(Path.MenuHudPath).GetComponent<MenuHud>();
+        
+        private PathResourcesStaticData Path => _staticData.PathResourcesConfig;
     }
 }
