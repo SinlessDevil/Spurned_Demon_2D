@@ -4,7 +4,7 @@ using Points;
 
 namespace Infrastructure.Services.PlayerServices
 {
-    public class PlayerService
+    public class PlayerService : IPlayerService
     {
         private bool _hasPlayer;
         

@@ -62,6 +62,7 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
             
             var player = _gameFactory.CreatePlayer(spawnPointPlayer.transform.position);
             _playerService.SetPlayer(player);
+            _playerService.SetSpawnPoint(spawnPointPlayer);
             player.Initialize();
             player.InitConfig(_staticDataService.PlayerConfig.MoveSpeed, _staticDataService.PlayerConfig.JumpHeight);
             return player;
@@ -69,17 +70,8 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
         private void InitCameraFollower(Transform targetTransform)
         {
             var goCamera = Camera.main.gameObject;
-
             var follower = goCamera.AddComponent<FollowerUpdate>();
-            
             follower.Initialize(targetTransform);
-        }
-        
-        public override void Exit()
-        {
-            base.Exit();
-            _inputService.Cleanup();
-            _playerService.Cleanup();
         }
     }
 }

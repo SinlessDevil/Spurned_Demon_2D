@@ -32,8 +32,6 @@ namespace GameController
         }
         public void Activate()
         {
-            TrySetMover(_playerService.Player);
-
             _playerService.OnPlayerAdded += TrySetMover;
             _playerService.OnPlayerRemoved += RemoveMover;
         }
@@ -48,6 +46,7 @@ namespace GameController
 
         void ITickable.Tick()
         {
+            Debug.Log(_controllable);
             if (_controllable != null)
             {
                 InputMoveRight();
@@ -104,11 +103,16 @@ namespace GameController
             }
         }
 
-        private void TrySetMover(Player player) => _controllable = player.GetComponent<IConrollable>();
+        private void TrySetMover(Player player)
+        {
+            _controllable = player;
+            Debug.LogWarning("Added " + _controllable);
+        }
 
         private void RemoveMover(Player player)
         {
             _controllable = null;
+            Debug.LogWarning("Removed " + _controllable);
         }
     }
 }
