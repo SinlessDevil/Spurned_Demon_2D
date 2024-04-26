@@ -6,8 +6,11 @@ namespace Infrastructure.Services.Factories.UIFactory
 {
     public interface IUIFactory
     {
+        
+        public GameHud GameHud { get; }
+        public MenuHud MenuHud { get;}
         void CreateUiRoot();
-        void CreateGameHud();
+        GameHud CreateGameHud();
         MenuHud CreateMenuHud();
         RectTransform CrateWindow(WindowTypeId windowTypeId);
     }

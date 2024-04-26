@@ -14,6 +14,9 @@ namespace Infrastructure.Services.Factories.UIFactory
 
         private Transform _uiRoot;
 
+        public GameHud GameHud { get; private set; }
+        public MenuHud MenuHud { get; private set; }
+        
         public UIFactory(IInstantiator instantiator, IStaticDataService staticDataService) : base(instantiator)
         {
             _instantiator = instantiator;
@@ -28,8 +31,16 @@ namespace Infrastructure.Services.Factories.UIFactory
         }
 
         public void CreateUiRoot() => _uiRoot = Instantiate(Path.UiRootPath).transform;
-        public void CreateGameHud() => Instantiate(Path.GameHudPath).GetComponent<GameHud>();
-        public MenuHud CreateMenuHud() => Instantiate(Path.MenuHudPath).GetComponent<MenuHud>();
+        public GameHud CreateGameHud()
+        {
+            GameHud = Instantiate(Path.GameHudPath).GetComponent<GameHud>();
+            return GameHud;
+        }
+        public MenuHud CreateMenuHud()
+        {
+            MenuHud = Instantiate(Path.MenuHudPath).GetComponent<MenuHud>();
+            return MenuHud;
+        }
         
         private PathResourcesStaticData Path => _staticData.PathResourcesConfig;
     }
