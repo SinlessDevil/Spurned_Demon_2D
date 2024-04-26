@@ -13,8 +13,10 @@ using Infrastructure.Services.Finish.Lose;
 using Infrastructure.Services.Finish.Win;
 using Infrastructure.Services.FPSMeters;
 using Infrastructure.Services.FxEffect;
+using Infrastructure.Services.Input;
 using Infrastructure.Services.LocalizationService;
 using Infrastructure.Services.PersistenceProgress;
+using Infrastructure.Services.PlayerServices;
 using Infrastructure.Services.Random;
 using Infrastructure.Services.SaveLoad;
 using Infrastructure.Services.StaticData;
@@ -44,6 +46,7 @@ namespace Infrastructure.Installers
 
             BindMonoServices();
             BindServices();
+            InstallControllers();
             BindGameStateMachine();
             InitializeDebugger();
             MakeInitializable();
@@ -77,6 +80,8 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<CoroutineService>().AsSingle();
             Container.BindInterfacesTo<FxEffectService>().AsSingle();
             Container.BindInterfacesTo<SaveLoadService>().AsSingle();
+            Container.BindInterfacesTo<InputService>().AsSingle();
+            Container.BindInterfacesTo<PlayerService>().AsSingle();
             
             BindEnrichedAnalyticService<AnalyticService>();
             BindDeviceDataService(); 
@@ -108,7 +113,7 @@ namespace Infrastructure.Installers
             staticDataService.LoadData();
             Container.Bind<IStaticDataService>().FromInstance(staticDataService).AsSingle();
         }
-
+        private void InstallControllers() => Container.Install<ControllersInstaller>();
         private void BindAppInfoService()
         {
             Container
@@ -151,6 +156,7 @@ namespace Infrastructure.Installers
             Container.Bind<LoadLocalizationState>().AsSingle();   
             Container.Bind<GameLoopState>().AsSingle();
         }
+        
         private void BootstrapGame() => 
             Container.Resolve<IStateMachine<IGameState>>().Enter<BootstrapState>();
         private TOut SelectImplementation<TOut, TAndroid, TIos, TEditor>() 

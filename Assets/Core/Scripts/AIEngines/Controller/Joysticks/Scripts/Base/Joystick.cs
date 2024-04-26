@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+﻿using Infrastructure.Services.Input;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Controller.Joysticks
 {
-    public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+    public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IInputDevice
     {
-
         [SerializeField] private float handleRange = 1;
         [SerializeField] private float deadZone = 0;
         [SerializeField] private AxisOptions axisOptions = AxisOptions.Both;
@@ -49,7 +49,7 @@ namespace Controller.Joysticks
             handle.pivot = center;
             handle.anchoredPosition = Vector2.zero;
         }
-
+        
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             OnDrag(eventData);

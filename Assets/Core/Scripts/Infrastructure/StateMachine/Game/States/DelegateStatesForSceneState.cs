@@ -1,3 +1,5 @@
+using Controllers;
+using GameController;
 using Infrastructure.StateMachine.Game.States.LoadSceneStates;
 using UnityEngine;
 using Zenject;
@@ -6,34 +8,37 @@ namespace Infrastructure.StateMachine.Game.States
 {
     public class DelegateStatesForSceneState : IPayloadedState<string>, IGameState
     {
-        private readonly IStateMachine<IGameState> _gameStateMachine;
-
         private const string MenuScene = "Menu";
         private const string GameScene = "GamePlay";
+        
+        private readonly IStateMachine<IGameState> _gameStateMachine;
+        private readonly IGameController _gameController;
 
         [Inject]
-        public DelegateStatesForSceneState(IStateMachine<IGameState> gameStateMachine)
+        public DelegateStatesForSceneState(IStateMachine<IGameState> gameStateMachine,
+            PlayerMoveController playerMoveController)
         {
             _gameStateMachine = gameStateMachine;
+            _gameController = new CompositeController(
+                playerMoveController
+            );
         }
 
         public void Enter(string payload)
         {
-            if(payload == MenuScene)
+            switch (payload)
             {
-                _gameStateMachine.Enter<LoadMenuState, string>(payload);
-                return;
+                case MenuScene:
+                    _gameStateMachine.Enter<LoadMenuState, string>(payload);
+                    return;
+                case GameScene:
+                    _gameStateMachine.Enter<LoadGameState, string>(payload);
+                    return;
+                default:
+                    Debug.LogError($"{payload} Scene was not found in stateMappings !");
+                    LoadBaseState(payload);
+                    break;
             }
-
-            if (payload == GameScene)
-            {
-                _gameStateMachine.Enter<LoadGameState, string>(payload);
-                return;
-            }
-
-            Debug.LogError($"{payload} Scene was not found in stateMappings !");
-
-            LoadBaseState(payload);
         }
 
         private void LoadBaseState(string payload)
@@ -43,7 +48,7 @@ namespace Infrastructure.StateMachine.Game.States
 
         public void Exit()
         {
-
+            _gameController.Deactivate();
         }
     }
 }

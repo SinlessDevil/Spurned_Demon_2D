@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI.Hudes;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
@@ -12,6 +13,8 @@ namespace Infrastructure.Services.Factories
         {
             _instantiator = instantiator;
         }
+
+        public GameHud GameHud { get; private set; }
 
         protected T Instantiate<T>() =>
             _instantiator.Instantiate<T>();

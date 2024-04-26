@@ -29,12 +29,12 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
             _audioClipsService = audioClipsService;
         }
 
-        public void Enter(string payload)
+        public virtual void Enter(string payload)
         {
             _loadingCurtain.Show();
             _sceneLoader.Load(payload, OnLevelLoad);
         }
-        public void Exit()
+        public virtual void Exit()
         {
             _loadingCurtain.Hide();
         }
