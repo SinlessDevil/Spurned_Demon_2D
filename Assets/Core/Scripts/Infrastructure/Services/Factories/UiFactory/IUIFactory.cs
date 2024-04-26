@@ -1,6 +1,6 @@
 ﻿using UI.Hudes;
 using UnityEngine;
-using Window;
+using UI.Window;
 
 namespace Infrastructure.Services.Factories.UIFactory
 {

@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Services.Factories.UIFactory;
 using UnityEngine;
-using Window;
+using UI.Window;
 using Zenject;
 
 namespace Infrastructure.Services.Window

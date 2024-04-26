@@ -1,5 +1,5 @@
 using Infrastructure.Services.Window;
-using Window;
+using UI.Window;
 
 namespace Infrastructure.Services.Finish.Win
 {

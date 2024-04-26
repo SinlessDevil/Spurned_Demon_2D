@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Window;
+using UI.Window;
 
 namespace Infrastructure.StaticData
 {

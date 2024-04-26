@@ -1,5 +1,5 @@
 using Infrastructure.StaticData;
-using Window;
+using UI.Window;
 
 namespace Infrastructure.Services.StaticData
 {

@@ -21,11 +21,18 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
 
         protected override void InitGameWorld()
         {
+            InitGameHud();
+            
             var spawnPointPlayer = GetPlayerPoint();
             var player = InitPlayer(spawnPointPlayer.transform.position);
             InitPlayerController(player);
 
             InitCameraFollower(player.transform);
+        }
+
+        private void InitGameHud()
+        {
+            
         }
 
         private PlayerPoint GetPlayerPoint() =>

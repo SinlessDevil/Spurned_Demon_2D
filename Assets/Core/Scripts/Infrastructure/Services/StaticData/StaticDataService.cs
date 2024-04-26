@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Infrastructure.StaticData;
 using UnityEngine;
-using Window;
+using UI.Window;
 
 namespace Infrastructure.Services.StaticData
 {

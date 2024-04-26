@@ -2,7 +2,7 @@
 using Infrastructure.StaticData;
 using UnityEngine;
 using UI.Hudes;
-using Window;
+using UI.Window;
 using Zenject;
 
 namespace Infrastructure.Services.Factories.UIFactory
