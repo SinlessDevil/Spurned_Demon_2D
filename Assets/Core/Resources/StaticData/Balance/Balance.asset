@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a7db3f4c1743bf8e21c08518a441c2, type: 3}
   m_Name: Balance
   m_EditorClassIdentifier: 
+  Camera:
+    Smoothing: 2
+    Offset: {x: 0, y: 6, z: -10}

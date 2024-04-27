@@ -28,8 +28,7 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
             IAudioClipsService audioClipsService,
             IInputService inputService,
             IPlayerService playerService,
-            PlayerMoveController playerMoveController) : 
-            base(gameStateMachine, sceneLoader, loadingCurtain, uiFactory, gameFactory, staticDataService, audioClipsService)
+            PlayerMoveController playerMoveController) : base(gameStateMachine, sceneLoader, loadingCurtain, uiFactory, gameFactory, staticDataService, audioClipsService)
         {
             _inputService = inputService;
             _playerService = playerService;
@@ -71,7 +70,7 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
         {
             var goCamera = Camera.main.gameObject;
             var follower = goCamera.AddComponent<FollowerUpdate>();
-            follower.Initialize(targetTransform);
+            follower.Initialize(targetTransform,_staticDataService.Balance.Camera.Offset, _staticDataService.Balance.Camera.Smoothing);
         }
     }
 }
