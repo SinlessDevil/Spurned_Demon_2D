@@ -46,7 +46,6 @@ namespace GameController
 
         void ITickable.Tick()
         {
-            Debug.Log(_controllable);
             if (_controllable != null)
             {
                 InputMoveRight();

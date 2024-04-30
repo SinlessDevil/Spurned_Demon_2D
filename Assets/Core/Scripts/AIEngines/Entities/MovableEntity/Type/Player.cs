@@ -1,3 +1,4 @@
+using Core.Scripts.AIEngines.Healths;
 using Infrastructure.Services.Coroutines;
 using UnityEngine;
 using Entities.AnimationFSM;
@@ -8,6 +9,11 @@ namespace Entities.MovableEntity.Type
 {
     public class Player : MobileEntity
     {
+        [Space(10)] [Header("Presenters")]
+        [SerializeField] private Health _health;
+        [Space(10)] [Header("Viewer")]
+        [SerializeField] private PlayerHealthViewer _playerHealthViewer;
+        
         private StateAnimation _stateAnimation;
         private Animator _animator;
 
@@ -18,7 +24,14 @@ namespace Entities.MovableEntity.Type
         {
             _coroutineService = coroutineService;
         }
-        
+
+        public override void Initialize()
+        {
+            base.Initialize();
+            _health.Initialize(100);
+            _playerHealthViewer.Initialize(_health);
+        }
+
         public override bool IsMoving
         {
             set
