@@ -1,6 +1,6 @@
+using Core.Scripts.AIEngines.Entities.Players;
 using Infrastructure.StaticData;
 using UnityEngine;
-using Entities.MovableEntity.Type;
 
 namespace Infrastructure.Services.Factories.Game
 {

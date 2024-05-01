@@ -1,5 +1,5 @@
 using System;
-using Entities.MovableEntity.Type;
+using Core.Scripts.AIEngines.Entities.Players;
 using Points;
 
 namespace Infrastructure.Services.PlayerServices

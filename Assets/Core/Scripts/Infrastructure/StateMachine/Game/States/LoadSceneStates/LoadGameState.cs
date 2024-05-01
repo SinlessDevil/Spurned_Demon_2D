@@ -1,4 +1,5 @@
 using CameraControll;
+using Core.Scripts.AIEngines.Entities.Players;
 using Infrastructure.Services.AudioService;
 using Infrastructure.Services.Factories.Game;
 using Infrastructure.Services.Factories.UIFactory;
@@ -6,7 +7,6 @@ using Infrastructure.Services.StaticData;
 using Infrastructure.Services.Input;
 using Infrastructure.Services.PlayerServices;
 using UnityEngine;
-using Entities.MovableEntity.Type;
 using GameController;
 using Points;
 
@@ -63,7 +63,6 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
             _playerService.SetPlayer(player);
             _playerService.SetSpawnPoint(spawnPointPlayer);
             player.Initialize();
-            player.InitConfig(_staticDataService.PlayerConfig.MoveSpeed, _staticDataService.PlayerConfig.JumpHeight);
             return player;
         }
         private void InitCameraFollower(Transform targetTransform)

@@ -1,7 +1,7 @@
 using System;
 using Controller.Keyboard;
 using Controllers;
-using Entities.MovableEntity.Type;
+using Core.Scripts.AIEngines.Entities.Players;
 using Infrastructure.Services.Input;
 using Infrastructure.Services.PlayerServices;
 using Infrastructure.Services.StaticData;
@@ -104,14 +104,12 @@ namespace GameController
 
         private void TrySetMover(Player player)
         {
-            _controllable = player;
-            Debug.LogWarning("Added " + _controllable);
+            _controllable = player.PlayerMover;
         }
 
         private void RemoveMover(Player player)
         {
             _controllable = null;
-            Debug.LogWarning("Removed " + _controllable);
         }
     }
 }

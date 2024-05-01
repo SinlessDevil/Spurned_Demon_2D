@@ -1,6 +1,6 @@
-﻿using Infrastructure.Services.StaticData;
+﻿using Core.Scripts.AIEngines.Entities.Players;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
-using Entities.MovableEntity.Type;
 using Infrastructure.StaticData;
 using Zenject;
 
@@ -19,8 +19,9 @@ namespace Infrastructure.Services.Factories.Game
 
         public Player CreatePlayer(Vector3 spawnPosition)
         {
-            var player = Instantiate(Path.PlayerPath, spawnPosition, Quaternion.identity,null);
-            return player.GetComponent<Player>();
+            var player = Instantiate(Path.PlayerPath, spawnPosition, Quaternion.identity,null).GetComponent<Player>();
+            player.PlayerMover.InitConfig(_staticData.PlayerConfig.MoveSpeed, _staticData.PlayerConfig.JumpHeight);
+            return player;
         }
         public ParticleSystem CreateFxEffect(FxTypeId fxTypeId,Vector3 spawnPos)
         {
