@@ -1,6 +1,6 @@
 using Controllers;
 using GameController;
-using Infrastructure.Services.Input;
+using Infrastructure.Services.Inputs;
 using Infrastructure.Services.PlayerServices;
 using Infrastructure.StateMachine.Game.States.LoadSceneStates;
 using UnityEngine;

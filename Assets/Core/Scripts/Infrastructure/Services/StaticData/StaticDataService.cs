@@ -10,6 +10,7 @@ namespace Infrastructure.Services.StaticData
     {
         private const string GameConfigPath = "StaticData/Balance/GameConfig";
         private const string GameBalancePath = "StaticData/Balance/Balance";
+        private const string InputConfigPath = "StaticData/Balance/InputConfig";
         private const string AudioStaticDataPath = "StaticData/Balance/AudioConfig";
         private const string FxEffectStaticDataPath = "StaticData/Balance/FxEffectStaticData";
         private const string PathResourcesConfigPath = "StaticData/Balance/PathConfig";
@@ -19,6 +20,7 @@ namespace Infrastructure.Services.StaticData
         private GameStaticData _gameStaticData;
         private BalanceStaticData _balanceStaticData;
         private AudioStaticData _audioStaticData;
+        private InputStaticData _inputStaticData;
         private PlayerStaticData _playerStaticData;
         private PathResourcesStaticData _pathResourcesStaticData;
 
@@ -29,6 +31,7 @@ namespace Infrastructure.Services.StaticData
         public GameStaticData GameConfig => _gameStaticData;
         public AudioStaticData AudioConfig => _audioStaticData;
         public PathResourcesStaticData PathResourcesConfig => _pathResourcesStaticData;
+        public InputStaticData InputConfig => _inputStaticData;
         public PlayerStaticData PlayerConfig => _playerStaticData;
 
         public void LoadData()
@@ -42,6 +45,9 @@ namespace Infrastructure.Services.StaticData
             _balanceStaticData = Resources
                 .Load<BalanceStaticData>(GameBalancePath);
 
+            _inputStaticData = Resources
+                .Load<InputStaticData>(InputConfigPath);
+            
             _playerStaticData = Resources
                 .Load<PlayerStaticData>(PlayerConfigPath);
 

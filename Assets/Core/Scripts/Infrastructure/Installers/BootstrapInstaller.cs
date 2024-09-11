@@ -13,7 +13,7 @@ using Infrastructure.Services.Finish.Lose;
 using Infrastructure.Services.Finish.Win;
 using Infrastructure.Services.FPSMeters;
 using Infrastructure.Services.FxEffect;
-using Infrastructure.Services.Input;
+using Infrastructure.Services.Inputs;
 using Infrastructure.Services.LocalizationService;
 using Infrastructure.Services.PersistenceProgress;
 using Infrastructure.Services.PlayerServices;

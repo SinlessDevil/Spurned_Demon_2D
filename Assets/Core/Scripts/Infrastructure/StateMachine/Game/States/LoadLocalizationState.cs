@@ -11,7 +11,9 @@ namespace Infrastructure.StateMachine.Game.States
         private readonly ILocaleService _localeService;
 
         [Inject]
-        public LoadLocalizationState(IStateMachine<IGameState> gameStateMachine, ILocaleService localeService)
+        public LoadLocalizationState(
+            IStateMachine<IGameState> gameStateMachine, 
+            ILocaleService localeService)
         {
             _gameStateMachine = gameStateMachine;
             _localeService = localeService;
@@ -29,7 +31,11 @@ namespace Infrastructure.StateMachine.Game.States
 
             _gameStateMachine.Enter<GameLoopState>();
         }
+        public void Exit()
+        {
 
+        }
+        
         private void InitSaveLanguage()
         {
             if (_localeService.CurrentLanguageHasBeenSet == false)
@@ -57,11 +63,6 @@ namespace Infrastructure.StateMachine.Game.States
         {
             if(hud != null) 
                 hud.localizeMenu.Initialize(localizes);
-        }
-
-        public void Exit()
-        {
-
         }
     }
 }

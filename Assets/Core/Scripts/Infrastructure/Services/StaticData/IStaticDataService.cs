@@ -10,6 +10,7 @@ namespace Infrastructure.Services.StaticData
         BalanceStaticData Balance { get; }
         PathResourcesStaticData PathResourcesConfig { get; }
         
+        InputStaticData InputConfig { get; }
         PlayerStaticData PlayerConfig { get; }
         
         void LoadData();

@@ -1,4 +1,4 @@
-﻿using Infrastructure.Services.Input;
+﻿using Infrastructure.Services.Inputs;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

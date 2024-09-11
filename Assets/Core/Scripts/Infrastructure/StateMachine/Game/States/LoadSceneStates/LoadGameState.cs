@@ -1,19 +1,23 @@
-using CameraControll;
 using Core.Scripts.AIEngines.Entities.Players;
 using Infrastructure.Services.AudioService;
 using Infrastructure.Services.Factories.Game;
 using Infrastructure.Services.Factories.UIFactory;
 using Infrastructure.Services.StaticData;
-using Infrastructure.Services.Input;
+using Infrastructure.Services.Inputs;
 using Infrastructure.Services.PlayerServices;
+using Infrastructure.StaticData;
 using UnityEngine;
+using CameraControll;
 using GameController;
 using Points;
+using UI.Hudes;
 
 namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
 {
     public class LoadGameState : BaseLoadSceneState
     {
+        private PCInputDevice _pcInputDevice;
+        
         private readonly IInputService _inputService;
         private readonly IPlayerService _playerService;
         private readonly PlayerMoveController _playerMoveController;
@@ -28,7 +32,8 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
             IAudioClipsService audioClipsService,
             IInputService inputService,
             IPlayerService playerService,
-            PlayerMoveController playerMoveController) : base(gameStateMachine, sceneLoader, loadingCurtain, uiFactory, gameFactory, staticDataService, audioClipsService)
+            PlayerMoveController playerMoveController) : base(gameStateMachine, sceneLoader, loadingCurtain, 
+            uiFactory, gameFactory, staticDataService, audioClipsService)
         {
             _inputService = inputService;
             _playerService = playerService;
@@ -37,19 +42,33 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
 
         protected override void InitGameWorld()
         {
-            InitGameHud();
-
+            var gameHud = InitGameHud();
+            InitInput(gameHud);
+            
             ActiveControllers();
             var player = InitPlayer();
             InitCameraFollower(player.transform);
         }
-
-        private void InitGameHud()
+        private GameHud InitGameHud()
         {
            var gamehud = _uiFactory.CreateGameHud();
-           _inputService.SetInputDevice(gamehud.Joystick);
+           return gamehud;
         }
-
+        private void InitInput(GameHud gamehud)
+        {
+            if (_staticDataService.InputConfig.InputType == InputType.Keyboard)
+            {
+                _pcInputDevice = new PCInputDevice();
+                _inputService.SetInputDevice(_pcInputDevice);
+                gamehud.ToggleJoyStick(false);
+            }
+            else
+            {
+                _inputService.SetInputDevice(gamehud.Joystick);
+                gamehud.ToggleJoyStick(true);
+            }
+        }
+        
         private void ActiveControllers()
         {
             _playerMoveController.Activate();

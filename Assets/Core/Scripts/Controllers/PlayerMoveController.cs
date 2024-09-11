@@ -1,11 +1,12 @@
 using System;
-using Controller.Keyboard;
-using Controllers;
 using Core.Scripts.AIEngines.Entities.Players;
-using Infrastructure.Services.Input;
+using Infrastructure.Services.Inputs;
 using Infrastructure.Services.PlayerServices;
 using Infrastructure.Services.StaticData;
 using UnityEngine;
+using Controller.Keyboard;
+using Controllers;
+using Infrastructure.StaticData;
 using Zenject;
 
 namespace GameController
@@ -50,7 +51,11 @@ namespace GameController
             {
                 InputMoveRight();
                 InputMoveLeft();
-                InputJump();
+                
+                if(InputStaticData.InputType == InputType.Keyboard)
+                    InputJumpKeyboard();
+                else
+                    InputJumpJoystick();
             }
         }
 
@@ -86,7 +91,7 @@ namespace GameController
                 _controllable.IsMoving = false;
             }
         }
-        private void InputJump()
+        private void InputJumpJoystick()
         {
             float moveInput = _inputService.Vertical;
             if (moveInput > 0.5f)
@@ -101,15 +106,30 @@ namespace GameController
                 _controllable.IsJumping = false;
             }
         }
+        private void InputJumpKeyboard()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _controllable.IsJumping = true;
 
+                if (_controllable.IsJumping == true && _controllable.IsGround == true)
+                {
+                    _controllable.Jump();
+                }
+
+                _controllable.IsJumping = false;
+            }
+        }
+        
         private void TrySetMover(Player player)
         {
             _controllable = player.PlayerMover;
         }
-
         private void RemoveMover(Player player)
         {
             _controllable = null;
         }
+
+        private InputStaticData InputStaticData => _staticDataService.InputConfig;
     }
 }

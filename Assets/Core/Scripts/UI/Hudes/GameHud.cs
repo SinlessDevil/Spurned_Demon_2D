@@ -10,6 +10,11 @@ namespace UI.Hudes
         
         public Joystick Joystick => _joystick;
         
+        public void ToggleJoyStick(bool value)
+        {
+            _joystick.gameObject.SetActive(value);
+        }
+        
         public void Show()
         {
             _canvasGroup.alpha = 1f;

@@ -17,8 +17,14 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
         protected readonly IAudioClipsService _audioClipsService;
 
         [Inject]
-        public BaseLoadSceneState(IStateMachine<IGameState> gameStateMachine, ISceneLoader sceneLoader, ILoadingCurtain loadingCurtain, 
-            IUIFactory uiFactory, IGameFactory gameFactory, IStaticDataService staticDataService, IAudioClipsService audioClipsService)
+        public BaseLoadSceneState(
+            IStateMachine<IGameState> gameStateMachine, 
+            ISceneLoader sceneLoader, 
+            ILoadingCurtain loadingCurtain, 
+            IUIFactory uiFactory,
+            IGameFactory gameFactory, 
+            IStaticDataService staticDataService, 
+            IAudioClipsService audioClipsService)
         {
             _gameFactory = gameFactory;
             _gameStateMachine = gameStateMachine;
@@ -42,10 +48,8 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
         protected virtual void OnLevelLoad()
         {
             InitGameWorld();
-
             _gameStateMachine.Enter<LoadLocalizationState>();
         }
-
         protected abstract void InitGameWorld();
 
         #region Init UI
