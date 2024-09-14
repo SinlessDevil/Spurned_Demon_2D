@@ -12,7 +12,8 @@ namespace Infrastructure.Services.StaticData
         
         InputStaticData InputConfig { get; }
         PlayerStaticData PlayerConfig { get; }
-        
+        KeyWordsStaticData KeyWordsConfig { get; }
+
         void LoadData();
 
         WindowConfig ForWindow(WindowTypeId windowTypeId);

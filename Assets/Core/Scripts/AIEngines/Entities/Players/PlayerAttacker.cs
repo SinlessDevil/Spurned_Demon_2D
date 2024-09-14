@@ -1,5 +1,7 @@
 using Core.Scripts.AIEngines.Entities.Items.Weapons;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
+using Zenject;
 
 namespace Core.Scripts.AIEngines.Entities.Players
 {
@@ -9,6 +11,14 @@ namespace Core.Scripts.AIEngines.Entities.Players
         [SerializeField] private Weapon _weapon;
 
         private bool _isAttacking = false;
+        
+        private IStaticDataService _staticDataService;
+        
+        [Inject]
+        public void Constructor(IStaticDataService staticDataService)
+        {
+            _staticDataService = staticDataService;
+        }
         
         public void Initialize()
         {
@@ -22,7 +32,7 @@ namespace Core.Scripts.AIEngines.Entities.Players
         
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(_staticDataService.KeyWordsConfig.AttackKey))
             {
                 StartAttack();
             }

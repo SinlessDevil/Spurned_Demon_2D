@@ -15,12 +15,12 @@ namespace GameController
     { 
         private const float SmoothingFactor = 10;
         
+        private Vector3 _currentDirection;
+        private IConrollable _controllable;
+        
         private readonly IInputService _inputService;
         private readonly IPlayerService _playerService;
         private readonly IStaticDataService _staticDataService;
-
-        private Vector3 _currentDirection;
-        private IConrollable _controllable;
 
         public PlayerMoveController(
             IInputService inputService,
@@ -108,7 +108,7 @@ namespace GameController
         }
         private void InputJumpKeyboard()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(_staticDataService.KeyWordsConfig.JumpKey))
             {
                 _controllable.IsJumping = true;
 

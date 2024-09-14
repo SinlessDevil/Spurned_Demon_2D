@@ -14,6 +14,7 @@ namespace Infrastructure.Services.StaticData
         private const string AudioStaticDataPath = "StaticData/Balance/AudioConfig";
         private const string FxEffectStaticDataPath = "StaticData/Balance/FxEffectStaticData";
         private const string PathResourcesConfigPath = "StaticData/Balance/PathConfig";
+        private const string KeyWordsStaticDataPath = "StaticData/Balance/KeyWordConfig";
         private const string PlayerConfigPath = "StaticData/Entities/PlayerConfig";
         private const string WindowsStaticDataPath = "StaticData/WindowsStaticData";
 
@@ -23,6 +24,7 @@ namespace Infrastructure.Services.StaticData
         private InputStaticData _inputStaticData;
         private PlayerStaticData _playerStaticData;
         private PathResourcesStaticData _pathResourcesStaticData;
+        private KeyWordsStaticData _keyWordsStaticData;
 
         private Dictionary<WindowTypeId, WindowConfig> _windowConfigs;
         private Dictionary<FxTypeId, FxEffectConfig> _effectConfigs;
@@ -33,6 +35,7 @@ namespace Infrastructure.Services.StaticData
         public PathResourcesStaticData PathResourcesConfig => _pathResourcesStaticData;
         public InputStaticData InputConfig => _inputStaticData;
         public PlayerStaticData PlayerConfig => _playerStaticData;
+        public KeyWordsStaticData KeyWordsConfig => _keyWordsStaticData;
 
         public void LoadData()
         {
@@ -53,6 +56,9 @@ namespace Infrastructure.Services.StaticData
 
             _pathResourcesStaticData = Resources
                 .Load<PathResourcesStaticData>(PathResourcesConfigPath);
+            
+            _keyWordsStaticData = Resources
+                .Load<KeyWordsStaticData>(KeyWordsStaticDataPath);
 
             _windowConfigs = Resources
                 .Load<WindowStaticData>(WindowsStaticDataPath)
