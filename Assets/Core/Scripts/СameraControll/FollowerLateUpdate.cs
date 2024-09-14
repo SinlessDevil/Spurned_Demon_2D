@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace CameraControll
@@ -7,7 +6,7 @@ namespace CameraControll
     {
         private void LateUpdate()
         {
-            Move(Time.fixedDeltaTime);
+            Move(Time.deltaTime);
         }
     }
 }

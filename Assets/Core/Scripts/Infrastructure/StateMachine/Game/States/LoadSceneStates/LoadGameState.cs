@@ -87,7 +87,7 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
         private void InitCameraFollower(Transform targetTransform)
         {
             var goCamera = Camera.main.gameObject;
-            var follower = goCamera.AddComponent<FollowerUpdate>();
+            var follower = goCamera.AddComponent<FollowerFixedUpdate>();
             follower.Initialize(targetTransform,_staticDataService.Balance.Camera.Offset, _staticDataService.Balance.Camera.Smoothing);
         }
     }

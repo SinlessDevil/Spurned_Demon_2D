@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7429b28e19806034c93aea4cf95ebdba, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 4300072955005980937, guid: 377daf601ec84024687b13955eded4b8, type: 3}
   MoveSpeed: 10
-  JumpHeight: 8
+  JumpHeight: 16

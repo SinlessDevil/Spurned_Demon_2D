@@ -101,7 +101,7 @@ namespace Core.Scripts.AIEngines.Entities.Players
         {
             _moveInput = moveInput;
             float moveAmount = _moveInput * _moveSpeed;
-            transform.position += new Vector3(moveAmount * Time.deltaTime, 0, 0);
+            _rb.velocity = new Vector2(moveAmount, _rb.velocity.y); 
         }
         public void FlipBody(float moveInput)
         {

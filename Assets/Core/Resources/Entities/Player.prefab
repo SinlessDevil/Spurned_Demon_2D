@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072953749393013}
   - component: {fileID: 4300072953749393002}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072953754770330}
   - component: {fileID: 4300072953754770331}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072953855079847}
   - component: {fileID: 4300072953855079844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072953897372615}
   - component: {fileID: 4300072953897372612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954014649424}
   - component: {fileID: 4300072954014649425}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954083760866}
   - component: {fileID: 4300072954083760867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shawl_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954143467920}
   - component: {fileID: 4300072954143467921}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954156346407}
   - component: {fileID: 4300072954156346404}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954265722254}
   - component: {fileID: 4300072954265722255}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954448896308}
   - component: {fileID: 4300072954448896309}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954590187114}
   - component: {fileID: 4300072954590187115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shawl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954647988959}
   - component: {fileID: 4300072954647988956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shoulder_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954771987252}
   - component: {fileID: 4300072954771987253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,7 +1162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954777685559}
   - component: {fileID: 4300072954777685556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1246,7 +1246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072954977899828}
   - component: {fileID: 4300072954977899829}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1338,7 @@ GameObject:
   - component: {fileID: 7036788676836358866}
   - component: {fileID: 9059679624731395055}
   - component: {fileID: 3439905681315144427}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -1398,7 +1398,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  _chekerRadius: 0.2
+  _chekerRadius: 0.25
 --- !u!114 &2976011088622031901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,7 +1523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300072955198811375}
   - component: {fileID: 4300072955198811372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shoulder_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1607,7 +1607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4300072955293761608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1641,7 +1641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4300072955454630159}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ChekerGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1672,7 +1672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8658407127805479850}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1687,7 +1687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8423167489980415822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.266, y: 0.068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

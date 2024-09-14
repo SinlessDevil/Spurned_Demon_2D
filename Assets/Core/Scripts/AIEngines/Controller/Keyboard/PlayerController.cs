@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Controller.Keyboard
@@ -15,13 +16,17 @@ namespace Controller.Keyboard
             _isInitialize = true;
         }
 
-        public void Update()
+        public void FixedUpdate()
         {
             if (_isInitialize == false)
                 return;
 
             InputMoveLeft();
             InputMoveRight();
+        }
+
+        public void Update()
+        {
             InputJump();
         }
         
