@@ -30,64 +30,42 @@ namespace Core.Scripts.AIEngines.Entities.Players
             _playerMover = playerMover;
             _animator = GetComponent<Animator>();
             _stateAnimation = new(_animator, _coroutineService);
-
             Asserts();
-            
-            Subscribe();
         }
 
         public void Dispose()
         {
-            Unsubscribe();
             _playerMover = null;
             _animator = null;
             _stateAnimation = null;
         }
+        
 
-        private void Subscribe()
-        {
-            _playerMover.MovedPlayerEvent += OnMovingAnimation;
-            _playerMover.JumpedPlayerEvent += OnJumpingAnimation;
-        }
-        private void Unsubscribe()
-        {
-            _playerMover.MovedPlayerEvent -= OnMovingAnimation;
-            _playerMover.JumpedPlayerEvent -= OnJumpingAnimation;
-        }
-
-        private void OnMovingAnimation(bool isMoving)
+        public void PlayMovingAnimation(bool isMoving)
         {
             if (isMoving)
-            {
                 _stateAnimation.SetAnimMove();
-            }
             else
-            {
                 _stateAnimation.SetAnimIdile();
-            }
         }
-        private void OnJumpingAnimation(bool isJumping)
+        public void PlayJumpingAnimation(bool isJumping)
         {
             if (isJumping == false)
-            {
                 _stateAnimation.SetAnimJump();
-            }
             else
-            {
                 _stateAnimation.SetAnimIdile();
-            }
         }
-        private void Update()
-        {
-            _stateAnimation.UpdateCurrentState();
-        }
-
         public void PlayAttackAnimation()
         {
             _stateAnimation.SetAnimAttack();
         }
         
                 
+        private void Update()
+        {
+            _stateAnimation.UpdateCurrentState();
+        }
+        
         [UsedImplicitly]
         public void Trigger(string eventType)
         {

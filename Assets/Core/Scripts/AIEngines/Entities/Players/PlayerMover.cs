@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Controller.Keyboard;
 using Extensions;
@@ -8,6 +7,7 @@ namespace Core.Scripts.AIEngines.Entities.Players
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMover : MonoBehaviour, IConrollable
     {
+        [SerializeField] private PlayerAnimatorViewer _playerAnimatorViewer;
         [SerializeField] private Transform _bodyChaaracter;
         [Space(10)]
         [SerializeField] private Transform _chekerGroundPos;
@@ -38,24 +38,6 @@ namespace Core.Scripts.AIEngines.Entities.Players
 
             _isInitialize = true;
         }
-        
-        public void InitConfig(float moveSpeed, float jumpHeight)
-        {
-            _moveSpeed = moveSpeed;
-            _jumpHeight = jumpHeight;
-        }
-        private void InitComponent()
-        {
-            _rb = GetComponent<Rigidbody2D>();
-        }
-        private void InitVectorLooks()
-        {
-            _lookRight = new Vector3(0, 0, 0);
-            _lookLeft = new Vector3(0, 180, 0);
-        }
-
-        public event Action<bool> MovedPlayerEvent;
-        public event Action<bool> JumpedPlayerEvent;
 
         public bool IsMoving
         {
@@ -67,20 +49,34 @@ namespace Core.Scripts.AIEngines.Entities.Players
                 if(_isGround == false)
                     return;
                 
-                MovedPlayerEvent?.Invoke(_isMoving);
+                _playerAnimatorViewer.PlayMovingAnimation(_isMoving);
             }
         }
-
         public bool IsJumping { get; set; }
-
         public bool IsGround
         {
             get => _isGround;
             private set
             {
                 _isGround = value;
-                JumpedPlayerEvent?.Invoke(_isGround);
+                _playerAnimatorViewer.PlayJumpingAnimation(_isGround);
             }
+        }
+        
+        public void InitConfig(float moveSpeed, float jumpHeight)
+        {
+            _moveSpeed = moveSpeed;
+            _jumpHeight = jumpHeight;
+        }
+        
+        private void InitComponent()
+        {
+            _rb = GetComponent<Rigidbody2D>();
+        }
+        private void InitVectorLooks()
+        {
+            _lookRight = new Vector3(0, 0, 0);
+            _lookLeft = new Vector3(0, 180, 0);
         }
         
         private void FixedUpdate()

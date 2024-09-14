@@ -1433,6 +1433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe75dac79f78494eac6a89c06743f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerAnimatorViewer: {fileID: 7036788676836358866}
   _bodyChaaracter: {fileID: 4300072955293761608}
   _chekerGroundPos: {fileID: 4300072955454630159}
   _whatIsGround:
