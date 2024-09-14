@@ -8,6 +8,8 @@ namespace Entities.AnimationFSM
 {
     public class StateAnimation
     {
+        private const string AttackTrigger = "TriggerAttack";
+        
         private Dictionary<Type, ICharacterBehavior> _behaviorsMap;
         private ICharacterBehavior _behaviorCurrent;
 
@@ -22,13 +24,13 @@ namespace Entities.AnimationFSM
             InitBehaviors();
             SetBehaviorByDefault();
         }
+        
         private void InitBehaviors()
         {
             this._behaviorsMap = new Dictionary<Type, ICharacterBehavior>
             {
                 [typeof(AnimIdileState)] = new AnimIdileState(),
                 [typeof(AnimMoveState)] = new AnimMoveState(),
-                [typeof(AnimAttackState)] = new AnimAttackState(),
                 [typeof(AnimDeadState)] = new AnimDeadState(),
                 [typeof(AnimTakeDamageState)] = new AnimTakeDamageState(),
                 [typeof(AnimJumpState)] = new AnimJumpState(),
@@ -43,7 +45,6 @@ namespace Entities.AnimationFSM
         {
             SetAnimIdile();
         }
-        
         public void UpdateCurrentState()
         {
             _behaviorCurrent.Update();
@@ -76,8 +77,7 @@ namespace Entities.AnimationFSM
         }
         public void SetAnimAttack()
         {
-            var behaviorByAttack = this.GetBehavior<AnimAttackState>();
-            this.SetBehavior(behaviorByAttack);
+            _animator.SetTrigger(AttackTrigger);
         }
         public void SetAnimDead()
         {

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Linq;
+using Core.Scripts.AIEngines.Healths;
 using UnityEngine;
 
-namespace Core.Scripts.AIEngines.Healths
+namespace Core.Scripts.AIEngines.Entities.Players
 {
     public class PlayerHealthViewer : MonoBehaviour
     {

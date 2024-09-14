@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Infrastructure.Services.Inputs
 {
-    public class PCInputDevice : MonoBehaviour, IInputDevice
+    public class PCInputDevice : IInputDevice
     {
         public float Horizontal => Input.GetAxis("Horizontal");
         public float Vertical => Input.GetAxis("Vertical");

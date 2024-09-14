@@ -1,7 +1,9 @@
+using System;
 using Infrastructure.Services.Coroutines;
 using UnityEngine;
 using Entities.AnimationFSM;
 using Extensions;
+using JetBrains.Annotations;
 using Zenject;
 
 namespace Core.Scripts.AIEngines.Entities.Players
@@ -13,7 +15,6 @@ namespace Core.Scripts.AIEngines.Entities.Players
         private StateAnimation _stateAnimation;
         private Animator _animator;
 
-
         private ICoroutineService _coroutineService;
 
         [Inject]
@@ -22,6 +23,7 @@ namespace Core.Scripts.AIEngines.Entities.Players
             _coroutineService = coroutineService;
         }
 
+        public event Action<string> TriggeredAttackEvent;
         
         public void Initialize(PlayerMover playerMover)
         {
@@ -80,6 +82,18 @@ namespace Core.Scripts.AIEngines.Entities.Players
             _stateAnimation.UpdateCurrentState();
         }
 
+        public void PlayAttackAnimation()
+        {
+            _stateAnimation.SetAnimAttack();
+        }
+        
+                
+        [UsedImplicitly]
+        public void Trigger(string eventType)
+        {
+            TriggeredAttackEvent?.Invoke(eventType);
+        }
+        
         private void Asserts()
         {
             _animator.LogErrorIfComponentNull();

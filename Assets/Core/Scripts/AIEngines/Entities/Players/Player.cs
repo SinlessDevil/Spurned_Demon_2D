@@ -11,22 +11,40 @@ namespace Core.Scripts.AIEngines.Entities.Players
         [SerializeField] private PlayerHealthViewer _playerHealthViewer;
         [SerializeField] private PlayerAnimatorViewer _playerAnimatorViewer;
         [SerializeField] private PlayerMover _playerMover;
+        [SerializeField] private PlayerAttacker _playerAttacker;
+        
+        private bool _isInitialized = false;
+        
+        public PlayerMover PlayerMover => _playerMover;
         
         public void Initialize()
         {
-            _playerMover.Initialize();
+            if (_isInitialized)
+            {
+                Dispose();
+            }
             
+            _playerMover.Initialize();
             _health.Initialize(100);
             _playerHealthViewer.Initialize(_health);
-            
             _playerAnimatorViewer.Initialize(_playerMover);
+            _playerAttacker.Initialize();
+            
+            _isInitialized = true;
         }
 
-        public void Dispose()
+        private void Dispose()
         {
             _playerAnimatorViewer.Dispose();
+            _playerHealthViewer.Dispose();
+            _playerAttacker.Dispose();
+            
+            _isInitialized = false;
         }
-        
-        public PlayerMover PlayerMover => _playerMover;
+
+        private void OnDestroy()
+        {
+            Dispose();
+        }
     }
 }

@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Solid
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Environment
     uniqueID: 1436050611
+    locked: 0
+  - name: Weapons
+    uniqueID: 736738147
     locked: 0
