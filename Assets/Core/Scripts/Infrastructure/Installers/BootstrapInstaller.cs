@@ -21,6 +21,7 @@ using Infrastructure.Services.Random;
 using Infrastructure.Services.SaveLoad;
 using Infrastructure.Services.StaticData;
 using Infrastructure.Services.Timer;
+using Infrastructure.Services.Wallet;
 using Infrastructure.Services.Window;
 using Infrastructure.StateMachine;
 using Infrastructure.StateMachine.Game;
@@ -82,6 +83,7 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<SaveLoadService>().AsSingle();
             Container.BindInterfacesTo<InputService>().AsSingle();
             Container.BindInterfacesTo<PlayerService>().AsSingle();
+            Container.BindInterfacesTo<WalletService>().AsSingle();
             
             BindEnrichedAnalyticService<AnalyticService>();
             BindDeviceDataService(); 
