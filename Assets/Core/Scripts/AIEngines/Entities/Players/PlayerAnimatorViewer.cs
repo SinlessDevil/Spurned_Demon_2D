@@ -39,7 +39,6 @@ namespace Core.Scripts.AIEngines.Entities.Players
             _animator = null;
             _stateAnimation = null;
         }
-        
 
         public void PlayMovingAnimation(bool isMoving)
         {
@@ -60,7 +59,6 @@ namespace Core.Scripts.AIEngines.Entities.Players
             _stateAnimation.SetAnimAttack();
         }
         
-                
         private void Update()
         {
             _stateAnimation.UpdateCurrentState();
