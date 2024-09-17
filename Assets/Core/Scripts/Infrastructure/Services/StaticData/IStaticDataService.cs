@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Infrastructure.StaticData;
+using Infrastructure.StaticData.ItemObjects;
 using UI.Window;
 
 namespace Infrastructure.Services.StaticData
@@ -13,6 +15,7 @@ namespace Infrastructure.Services.StaticData
         InputStaticData InputConfig { get; }
         PlayerStaticData PlayerConfig { get; }
         KeyWordsStaticData KeyWordsConfig { get; }
+        IEnumerable<ItemObjectData> AllItemsObject { get; }
 
         void LoadData();
 

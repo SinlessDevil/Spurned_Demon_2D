@@ -7,6 +7,7 @@ using Infrastructure.Services.Coroutines;
 using Infrastructure.Services.DeviceData;
 using Infrastructure.Services.DeviceData.Abstractions;
 using Infrastructure.Services.Factories.Game;
+using Infrastructure.Services.Factories.Items;
 using Infrastructure.Services.Factories.UIFactory;
 using Infrastructure.Services.Finish;
 using Infrastructure.Services.Finish.Lose;
@@ -84,6 +85,7 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<InputService>().AsSingle();
             Container.BindInterfacesTo<PlayerService>().AsSingle();
             Container.BindInterfacesTo<WalletService>().AsSingle();
+            Container.BindInterfacesTo<ItemFactory>().AsSingle();
             
             BindEnrichedAnalyticService<AnalyticService>();
             BindDeviceDataService(); 

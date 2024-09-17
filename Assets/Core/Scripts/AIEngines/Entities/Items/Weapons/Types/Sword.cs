@@ -6,7 +6,19 @@ namespace Core.Scripts.AIEngines.Entities.Items.Weapons.Types
     public class Sword : Weapon
     {
         [SerializeField] private float _capsuleHeight = 2f;
+        [SerializeField] protected float _attackRadius = 5f;
+        [SerializeField] protected LayerMask _targetLayer;
+        [SerializeField] protected Vector3 _centerOffset = Vector3.zero;
 
+        protected int _damage;
+        protected float _attackSpeed;
+
+        public void Initialize(int damage, float attackSpeed)
+        {
+            _damage = damage;
+            _attackSpeed = attackSpeed;
+        }
+        
         public override void Attack()
         {
             Vector3 center = transform.position + _centerOffset;

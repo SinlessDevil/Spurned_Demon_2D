@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using Infrastructure.StaticData;
+using Infrastructure.StaticData.ItemObjects;
 using UnityEngine;
 using UI.Window;
 
@@ -17,6 +18,7 @@ namespace Infrastructure.Services.StaticData
         private const string KeyWordsStaticDataPath = "StaticData/Balance/KeyWordConfig";
         private const string PlayerConfigPath = "StaticData/Entities/PlayerConfig";
         private const string WindowsStaticDataPath = "StaticData/WindowsStaticData";
+        private const string ItemsObjectStaticDataPath = "StaticData/ItemsObject";
 
         private GameStaticData _gameStaticData;
         private BalanceStaticData _balanceStaticData;
@@ -28,6 +30,7 @@ namespace Infrastructure.Services.StaticData
 
         private Dictionary<WindowTypeId, WindowConfig> _windowConfigs;
         private Dictionary<FxTypeId, FxEffectConfig> _effectConfigs;
+        private Dictionary<string, ItemObjectData> _itemsObjectData;
 
         public BalanceStaticData Balance => _balanceStaticData;
         public GameStaticData GameConfig => _gameStaticData;
@@ -36,6 +39,8 @@ namespace Infrastructure.Services.StaticData
         public InputStaticData InputConfig => _inputStaticData;
         public PlayerStaticData PlayerConfig => _playerStaticData;
         public KeyWordsStaticData KeyWordsConfig => _keyWordsStaticData;
+        public IEnumerable<ItemObjectData> AllItemsObject => _itemsObjectData.Values;
+
 
         public void LoadData()
         {
@@ -67,6 +72,10 @@ namespace Infrastructure.Services.StaticData
             _effectConfigs = Resources
                 .Load<FxEffectStaticData>(FxEffectStaticDataPath)
                 .FxEffectContainers.ToDictionary(x => x.FxType, x => x);
+            
+            _itemsObjectData = Resources
+                .LoadAll<ItemObjectData>(ItemsObjectStaticDataPath)
+                .ToDictionary(x => x.ItemID, x => x);
         }
 
         public WindowConfig ForWindow(WindowTypeId windowTypeId) => 

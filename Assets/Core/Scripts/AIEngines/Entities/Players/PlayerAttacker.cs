@@ -1,6 +1,6 @@
-using Core.Scripts.AIEngines.Entities.Items.Weapons;
 using Infrastructure.Services.StaticData;
 using UnityEngine;
+using Core.Scripts.AIEngines.Entities.Items.Weapons;
 using Zenject;
 
 namespace Core.Scripts.AIEngines.Entities.Players
@@ -8,7 +8,7 @@ namespace Core.Scripts.AIEngines.Entities.Players
     public class PlayerAttacker : MonoBehaviour
     {
         [SerializeField] private PlayerAnimatorViewer _playerAnimatorViewer;
-        [SerializeField] private Weapon _weapon;
+        [SerializeField] private WeaponHolder _weaponHolder;
 
         private bool _isAttacking = false;
         
@@ -20,15 +20,8 @@ namespace Core.Scripts.AIEngines.Entities.Players
             _staticDataService = staticDataService;
         }
         
-        public void Initialize()
-        {
-            _playerAnimatorViewer.TriggeredAttackEvent += OnAttacked;
-        }
-
-        public void Dispose()
-        {
-            _playerAnimatorViewer.TriggeredAttackEvent -= OnAttacked;
-        }
+        public void Initialize() => _playerAnimatorViewer.TriggeredAttackEvent += OnAttacked;
+        public void Dispose() => _playerAnimatorViewer.TriggeredAttackEvent -= OnAttacked;
         
         private void Update()
         {
@@ -40,19 +33,21 @@ namespace Core.Scripts.AIEngines.Entities.Players
         
         private void StartAttack()
         {
+            if(_weaponHolder.GetWeapon() == null)
+                return;
+            
             if (_isAttacking) 
                 return;
             
             _isAttacking = true;
             _playerAnimatorViewer.PlayAttackAnimation();
         }
-        
         private void OnAttacked(string triggerName)
         {
             if (triggerName == "end_attack")
             {
                 _isAttacking = false;
-                _weapon.Attack();
+                _weaponHolder.GetWeapon().Attack();
             }
         }
     }

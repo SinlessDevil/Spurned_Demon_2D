@@ -12,6 +12,7 @@ namespace Core.Scripts.AIEngines.Entities.Players
         [SerializeField] private PlayerAnimatorViewer _playerAnimatorViewer;
         [SerializeField] private PlayerMover _playerMover;
         [SerializeField] private PlayerAttacker _playerAttacker;
+        [SerializeField] private PlayerWeaponHolder _playerWeaponHolder;
         
         private bool _isInitialized = false;
         
@@ -29,6 +30,7 @@ namespace Core.Scripts.AIEngines.Entities.Players
             _playerHealthViewer.Initialize(_health);
             _playerAnimatorViewer.Initialize(_playerMover);
             _playerAttacker.Initialize();
+            _playerWeaponHolder.Initialize();
             
             _isInitialized = true;
         }

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a7db3f4c1743bf8e21c08518a441c2, type: 3}
-  m_Name: Balance
+  m_Script: {fileID: 11500000, guid: ca38c294358cdbc47b29354018fc9992, type: 3}
+  m_Name: SwordDefault_v2
   m_EditorClassIdentifier: 
-  Camera:
-    Smoothing: 7.5
-    Offset: {x: 0, y: 6, z: -10}
-  DefaultItem:
-    ItemID: swordsDefault01
+  ItemPrefab: {fileID: 690292396673271105, guid: 4b8655be91be2474ba6fb302d07445ba, type: 3}
+  ItemID: swordsDefault02
+  Damage: 15
+  AttackSpeed: 2
