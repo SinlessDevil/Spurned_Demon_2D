@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Balance
   m_EditorClassIdentifier: 
   Camera:
-    Smoothing: 7.5
+    Smoothing: 2
     Offset: {x: 0, y: 6, z: -10}
   DefaultItem:
     ItemID: swordsDefault01

@@ -1,4 +1,3 @@
-using Core.Scripts.AIEngines.Entities.Players;
 using Infrastructure.Services.AudioService;
 using Infrastructure.Services.Factories.Game;
 using Infrastructure.Services.Factories.UIFactory;
@@ -7,6 +6,7 @@ using Infrastructure.Services.Inputs;
 using Infrastructure.Services.PlayerServices;
 using Infrastructure.StaticData;
 using UnityEngine;
+using Core.Scripts.AIEngines.Entities.Players;
 using CameraControll;
 using GameController;
 using Points;
