@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 10
   JumpHeight: 16
+  BaseJumpCount: 2
+  BaseHealth: 100

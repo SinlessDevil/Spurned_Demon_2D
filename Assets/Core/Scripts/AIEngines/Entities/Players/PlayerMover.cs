@@ -14,6 +14,10 @@ namespace Core.Scripts.AIEngines.Entities.Players
         [SerializeField] private LayerMask _whatIsGround;
         [SerializeField] private float _chekerRadius;
 
+        private int _currentJumpCount = 1;
+        private int _minJumpCount = 1;
+        private int _maxJumpCount = 2;
+        
         private bool _isInitialize;
 
         private bool _isGround;
@@ -62,11 +66,13 @@ namespace Core.Scripts.AIEngines.Entities.Players
                 _playerAnimatorViewer.PlayJumpingAnimation(_isGround);
             }
         }
-        
-        public void InitConfig(float moveSpeed, float jumpHeight)
+        public bool IsCanJump => _maxJumpCount >= _currentJumpCount;
+
+        public void InitConfig(float moveSpeed, float jumpHeight, int maxJumpCount)
         {
             _moveSpeed = moveSpeed;
             _jumpHeight = jumpHeight;
+            _maxJumpCount = maxJumpCount;
         }
         
         private void InitComponent()
@@ -85,6 +91,11 @@ namespace Core.Scripts.AIEngines.Entities.Players
                 return;
 
             IsGround = IsOnTheGround();
+
+            if (_isGround)
+            {
+                _currentJumpCount = _minJumpCount;
+            }
         }
 
         private void Asserts()
@@ -94,7 +105,16 @@ namespace Core.Scripts.AIEngines.Entities.Players
         }
         
         #region Controllable Methods
-        public virtual void Jump() => _rb.velocity = Vector2.up * _jumpHeight;
+
+        public virtual void Jump()
+        {
+            _currentJumpCount++;
+            
+            if(!IsCanJump)
+                return;
+            
+            _rb.velocity = Vector2.up * _jumpHeight;
+        }
         private bool IsOnTheGround() => Physics2D.OverlapCircle(_chekerGroundPos.position, _chekerRadius, _whatIsGround);
 
         public void MoveTo(float moveInput)

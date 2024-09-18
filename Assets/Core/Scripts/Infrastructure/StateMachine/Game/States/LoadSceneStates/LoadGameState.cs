@@ -81,7 +81,6 @@ namespace Infrastructure.StateMachine.Game.States.LoadSceneStates
             var player = _gameFactory.CreatePlayer(spawnPointPlayer.transform.position);
             _playerService.SetPlayer(player);
             _playerService.SetSpawnPoint(spawnPointPlayer);
-            player.Initialize();
             return player;
         }
         private void InitCameraFollower(Transform targetTransform)

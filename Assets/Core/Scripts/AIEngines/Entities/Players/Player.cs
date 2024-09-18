@@ -17,6 +17,7 @@ namespace Core.Scripts.AIEngines.Entities.Players
         private bool _isInitialized = false;
         
         public PlayerMover PlayerMover => _playerMover;
+        public Health Health => _health;
         
         public void Initialize()
         {
@@ -26,7 +27,6 @@ namespace Core.Scripts.AIEngines.Entities.Players
             }
             
             _playerMover.Initialize();
-            _health.Initialize(100);
             _playerHealthViewer.Initialize(_health);
             _playerAnimatorViewer.Initialize(_playerMover);
             _playerAttacker.Initialize();

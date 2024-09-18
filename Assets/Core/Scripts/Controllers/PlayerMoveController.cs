@@ -96,28 +96,22 @@ namespace GameController
             float moveInput = _inputService.Vertical;
             if (moveInput > 0.5f)
             {
-                _controllable.IsJumping = true;
-
-                if (_controllable.IsJumping == true && _controllable.IsGround == true)
-                {
-                    _controllable.Jump();
-                }
-
-                _controllable.IsJumping = false;
+                Jump();
             }
         }
         private void InputJumpKeyboard()
         {
             if (Input.GetKeyDown(_staticDataService.KeyWordsConfig.JumpKey))
             {
-                _controllable.IsJumping = true;
+                Jump();
+            }
+        }
 
-                if (_controllable.IsJumping == true && _controllable.IsGround == true)
-                {
-                    _controllable.Jump();
-                }
-
-                _controllable.IsJumping = false;
+        private void Jump()
+        {
+            if (_controllable.IsCanJump)
+            {
+                _controllable.Jump();
             }
         }
         

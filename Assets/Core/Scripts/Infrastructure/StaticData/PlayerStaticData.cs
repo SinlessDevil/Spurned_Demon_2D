@@ -7,5 +7,7 @@ namespace Infrastructure.StaticData
     {
         public float MoveSpeed;
         public float JumpHeight;
+        public int BaseJumpCount;
+        public int BaseHealth;
     }
 }
