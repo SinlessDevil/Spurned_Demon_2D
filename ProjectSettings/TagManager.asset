@@ -53,3 +53,6 @@ TagManager:
   - name: Weapons
     uniqueID: 736738147
     locked: 0
+  - name: VFX
+    uniqueID: 2646655949
+    locked: 0
